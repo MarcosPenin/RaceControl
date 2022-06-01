@@ -87,7 +87,7 @@ public class Tournament {
 		super();
 		this.name = name;
 		this.onlyOneGarage = onlyOneGarage;
-		this.numRaces=numRaces;
+		this.numRaces = numRaces;
 	}
 
 	public Tournament(String name, ArrayList<Race> races, boolean onlyOneGarage, int numRaces) {
@@ -95,18 +95,22 @@ public class Tournament {
 		this.name = name;
 		this.races = races;
 		this.onlyOneGarage = onlyOneGarage;
-		this.numRaces=numRaces;
+		this.numRaces = numRaces;
 	}
 
 	public void actualiceScoreTable(Race race) {
 		if (!scoreTable.isEmpty()) {
-			for (Map.Entry<Car, Integer> entry : scoreTable.entrySet()) {
-				if (entry.getKey().getPiloto() == race.first.getPiloto()) {
-					entry.setValue(entry.getValue() + 10);
-				} else if (entry.getKey().getPiloto() == race.second.getPiloto()) {
-					entry.setValue(entry.getValue() + 5);
-				} else if (entry.getKey().getPiloto() == race.third.getPiloto()) {
-					entry.setValue(entry.getValue() + 3);
+			for (Map.Entry<Car, Integer> podiumPosition : race.podium.entrySet()) {
+				for (Map.Entry<Car, Integer> entry : scoreTable.entrySet()) {
+					if (podiumPosition.getKey().getPiloto() == entry.getKey().getPiloto()) {
+						if (podiumPosition.getValue() == 1) {
+							entry.setValue(entry.getValue() + 10);
+						} else if (podiumPosition.getValue() == 2) {
+							entry.setValue(entry.getValue() + 5);
+						} else if (entry.getValue() == 3) {
+							entry.setValue(entry.getValue() + 3);
+						}
+					}
 				}
 			}
 		} else {

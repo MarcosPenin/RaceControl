@@ -2,6 +2,7 @@ package pojos;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class Race  implements Serializable {
@@ -10,16 +11,34 @@ public class Race  implements Serializable {
 	// quitar
 
 	protected ArrayList<Car> cars = new ArrayList<>();
-	protected ArrayList<Car> podium = new ArrayList<>();
+	protected HashMap<Car,Integer> podium = new HashMap<>();
 	protected Tournament tournament;
-	protected Car first;
-	protected Car second;
-	protected Car third;
+
 
 	public Race(String raceName, Tournament tournament) {
 		super();
 		this.raceName = raceName;
 		this.tournament = tournament;
+	}
+
+
+	public Tournament getTournament() {
+		return tournament;
+	}
+
+
+	public void setTournament(Tournament tournament) {
+		this.tournament = tournament;
+	}
+
+
+	public void setCars(ArrayList<Car> cars) {
+		this.cars = cars;
+	}
+
+
+	public void setPodium(HashMap<Car, Integer> podium) {
+		this.podium = podium;
 	}
 
 
@@ -52,29 +71,7 @@ public class Race  implements Serializable {
 
 
 
-	public Car getFirst() {
-		return first;
-	}
 
-	public void setFirst(Car first) {
-		this.first = first;
-	}
-
-	public Car getSecond() {
-		return second;
-	}
-
-	public void setSecond(Car second) {
-		this.second = second;
-	}
-
-	public Car getThird() {
-		return third;
-	}
-
-	public void setThird(Car third) {
-		this.third = third;
-	}
 
 	public String getRaceName() {
 		return raceName;
@@ -92,12 +89,10 @@ public class Race  implements Serializable {
 		this.cars = car;
 	}
 
-	public ArrayList<Car> getPodium() {
+	public HashMap<Car,Integer> getPodium() {
 		return podium;
 	}
 
-	public void setPodium(ArrayList<Car> podium) {
-		this.podium = podium;
-	}
+
 
 }

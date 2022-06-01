@@ -37,15 +37,19 @@ public class EliminationRace extends Race {
 			}
 			Collections.sort(cars);
 			if (cars.size() == 3) {
-				setThird(cars.get(2));
+				podium.put(cars.get(2), 3);
 			}
 			if (cars.size() == 2) {
-				setSecond(cars.get(1));
+				podium.put(cars.get(1), 2);
 			}
 
-			System.out.println(cars.get(cars.size() - 1).getPiloto() + " out");
-			cars.get(cars.size() - 1).brakeStop();
-			cars.remove(cars.size() - 1);
+			if(cars.get(cars.size()-1)==cars.get(cars.size()-2)) {
+				System.out.println("Empate en última posición, no hay eliminados en este minuto");
+			}else {
+				System.out.println(cars.get(cars.size() - 1).getPiloto() + " out");
+				cars.get(cars.size() - 1).brakeStop();
+				cars.remove(cars.size() - 1);
+			}
 
 			try {
 				// Thread.sleep(60000); UN MINUTO EN LA VERSION FINAL
@@ -54,7 +58,7 @@ public class EliminationRace extends Race {
 				e.printStackTrace();
 			}
 		}
-		setFirst(cars.get(0));
+		podium.put(cars.get(0), 1);
 		cars.get(0).brakeStop();
 
 		tournament.actualiceScoreTable(this);
