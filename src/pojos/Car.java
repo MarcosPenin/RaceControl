@@ -4,36 +4,43 @@ import java.util.Random;
 
 public class Car implements Comparable<Car> {
 
-	enum Gear {
+	public static enum Gear {
 		N, D, R
 	};
 
+	private String piloto;
 	private String brand;
 	private String model;
-	private int MAX_SPEED = 120;
+	private final int MAX_SPEED = 120;
 	private final int MAX_SPEED_REVERSE = 20;
 	String fuel;
 	int speedometer = 0;
 	int tachometer = 0;
-	private Gear gear;
+	private Gear gear = Gear.N;
 	int steeringWheelAngle = 0;
+
 	private Garage garage;
 	private int totalDistance;
 	private int distance;
-	private int score;
 
-	public Car(String brand, String model, String fuel, Gear gear) {
+	public Car(String piloto) {
+		this.piloto = piloto;
+	}
+
+	public Car(String piloto, String brand, String model, String fuel) {
+		this.piloto = piloto;
 		this.brand = brand;
 		this.model = model;
 		this.fuel = fuel;
-		this.gear = gear;
+
 	}
 
-	public Car() {
-		this.brand = "Opel";
-		this.model = "Corsa";
-		this.fuel = "Gasolina";
-		this.gear = Gear.N;
+	public String getPiloto() {
+		return piloto;
+	}
+
+	public void setPiloto(String piloto) {
+		this.piloto = piloto;
 	}
 
 	public void start() {
@@ -55,6 +62,14 @@ public class Car implements Comparable<Car> {
 		} else {
 			System.out.println("Non se pode apagar o vehiculo, primero ten que estar detido");
 		}
+	}
+
+	public void brakeStop() {
+		for (int i = 0; i < 20; i++) {
+			brake();
+		}
+		stop();
+		distance=0;
 	}
 
 	public void drive() {
@@ -278,44 +293,8 @@ public class Car implements Comparable<Car> {
 		this.totalDistance = totalDistance;
 	}
 
-	public int getScore() {
-		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
-
-	public static void main(String[] args) {
-
-		Car myCar = new Car();
-		String option = "";
-		System.out.println();
-		myCar.showDetails();
-
-		myCar.start();
-		// myCar.reverse();s
-
-		for (int i = 0; i < 10; i++) {
-			myCar.accelerate();
-			System.out.println(myCar.showDetails());
-		}
-		myCar.handBrake();
-
-		System.out.println("-----------------------------");
-
-		for (int i = 0; i < 10; i++) {
-			myCar.brake();
-			System.out.println(myCar.showDetails());
-		}
-
-		System.out.println("-----------------------------");
-
-		myCar.handBrake();
-		System.out.println(myCar.showDetails());
-		myCar.stop();
-		System.out.println(myCar.showDetails());
-
+	public String toString() {
+		return "Piloto: " + this.piloto + "     Garage: " + this.garage.getName();
 	}
 
 }

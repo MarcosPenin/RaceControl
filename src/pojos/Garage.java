@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 public class Garage {
 
+	
+	
 	private String name;
-	private ArrayList<Car> cars=new ArrayList<>();
+	private ArrayList<Car> cars = new ArrayList<>();
 
 	public Garage(String name) {
 		super();
@@ -15,8 +17,9 @@ public class Garage {
 	public Garage(String name, ArrayList<Car> cars) {
 		super();
 		this.name = name;
-		for(Car car: cars) {
+		for (Car car : cars) {
 			this.cars.add(car);
+			car.setGarage(this);
 		}
 
 	}
@@ -39,6 +42,7 @@ public class Garage {
 
 	public void addCar(Car car) {
 		cars.add(car);
+		car.setGarage(this);
 	}
 
 }

@@ -4,36 +4,31 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Race extends Thread implements Serializable {
+public class Race  implements Serializable {
 
 	protected String raceName;
-	protected ArrayList<Garage> garages=new ArrayList<>();
-	protected ArrayList<Car> cars= new ArrayList<>();
-	protected ArrayList<Car> podium;
-	protected boolean onlyOneGarage;
+	// quitar
+
+	protected ArrayList<Car> cars = new ArrayList<>();
+	protected ArrayList<Car> podium = new ArrayList<>();
+	protected Tournament tournament;
 	protected Car first;
 	protected Car second;
 	protected Car third;
 
-	public Race(String raceName, boolean onlyOneGarage) {
+	public Race(String raceName, Tournament tournament) {
 		super();
 		this.raceName = raceName;
-		this.garages = garages;
+		this.tournament = tournament;
 	}
 
-	public Race(String raceName, ArrayList<Garage> garages, boolean onlyOneGarage) {
-		super();
-		this.raceName = raceName;
-		this.garages = garages;
-
-	}
 
 	public void insertCars() {
-		if (onlyOneGarage) {
-			cars = garages.get(0).getCars();
+		if (this.tournament.onlyOneGarage) {
+			cars = tournament.getGarages().get(0).getCars();
 		} else {
 			Random random = new Random();
-			for (Garage garage : garages) {
+			for (Garage garage : tournament.getGarages()) {
 				int max = garage.getCars().size();
 				int position = random.nextInt(max - 0) + 0;
 				this.cars.add(garage.getCars().get(position));
@@ -41,13 +36,21 @@ public class Race extends Thread implements Serializable {
 		}
 	}
 
-	public boolean isOnlyOneGarage() {
-		return onlyOneGarage;
+	public void startCars() {
+		for (Car car : cars) {
+			car.start();
+		}
 	}
 
-	public void setOnlyOneGarage(boolean onlyOneGarage) {
-		this.onlyOneGarage = onlyOneGarage;
+
+
+	public void brakeStopAll() {
+		for (Car car : cars) {
+			car.brakeStop();
+		}
 	}
+
+
 
 	public Car getFirst() {
 		return first;
@@ -81,14 +84,6 @@ public class Race extends Thread implements Serializable {
 		this.raceName = raceName;
 	}
 
-	public ArrayList<Garage> getGarages() {
-		return garages;
-	}
-
-	public void setGarages(ArrayList<Garage> garages) {
-		this.garages = garages;
-	}
-
 	public ArrayList<Car> getCars() {
 		return cars;
 	}
@@ -103,15 +98,6 @@ public class Race extends Thread implements Serializable {
 
 	public void setPodium(ArrayList<Car> podium) {
 		this.podium = podium;
-	}
-
-	public void addGarage(Garage garage) {
-		garages.add(garage);
-	}
-
-	public void addCar(Car car) {
-		this.cars.add(car);
-
 	}
 
 }
