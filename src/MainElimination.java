@@ -29,8 +29,8 @@ public class MainElimination {
 		tournament1.addGarage(garage2);
 		tournament1.addGarage(garage3);
 
-		EliminationRace race1 = new EliminationRace("Primera pista", tournament1);
-		EliminationRace race2 = new EliminationRace("Segunda pista", tournament1);
+		EliminationRace race1 = new EliminationRace("Primera pista");
+		EliminationRace race2 = new EliminationRace("Segunda pista");
 		tournament1.addRace(race1);
 		tournament1.addRace(race2);
 

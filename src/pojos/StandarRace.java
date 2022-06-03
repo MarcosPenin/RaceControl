@@ -9,12 +9,12 @@ public class StandarRace extends Race {
 	private long horas = 3;
 	// MULTIPLICAR POR 60 para la VERSION FINAL
 
-	public StandarRace(String raceName, Tournament tournament) {
-		super(raceName, tournament);
+	public StandarRace(String raceName) {
+		super(raceName);
 	}
 
-	public StandarRace(String raceName, Tournament tournament, int horas) {
-		super(raceName, tournament);
+	public StandarRace(String raceName, int horas) {
+		super(raceName);
 		this.horas = horas;
 	}
 

@@ -13,11 +13,11 @@ public class Car implements Comparable<Car> {
 	private String model;
 	private final int MAX_SPEED = 120;
 	private final int MAX_SPEED_REVERSE = 20;
-	String fuel;
-	int speedometer = 0;
-	int tachometer = 0;
+	private String fuel;
+	private int speedometer = 0;
+	private int tachometer = 0;
 	private Gear gear = Gear.N;
-	int steeringWheelAngle = 0;
+	private int steeringWheelAngle = 0;
 
 	private Garage garage;
 	private int totalDistance;
@@ -33,14 +33,6 @@ public class Car implements Comparable<Car> {
 		this.model = model;
 		this.fuel = fuel;
 
-	}
-
-	public String getPiloto() {
-		return piloto;
-	}
-
-	public void setPiloto(String piloto) {
-		this.piloto = piloto;
 	}
 
 	public void start() {
@@ -64,14 +56,16 @@ public class Car implements Comparable<Car> {
 		}
 	}
 
+	//Frena y apaga los coches
 	public void brakeStop() {
 		for (int i = 0; i < 20; i++) {
 			brake();
 		}
 		stop();
-		distance=0;
+		distance = 0;
 	}
 
+	//Calcula un 75% de posibilidades de aceleración y un 25% de frenar y llama al método correspondiendte
 	public void drive() {
 		Random random = new Random();
 		int val = random.nextInt(4) + 1;
@@ -113,86 +107,6 @@ public class Car implements Comparable<Car> {
 			break;
 		}
 
-	}
-
-	public String getBrand() {
-		return brand;
-	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-	public int getMaxSpeed() {
-		return MAX_SPEED;
-	}
-
-	public String getFuel() {
-		return fuel;
-	}
-
-	public void setFuel(String fuel) {
-		this.fuel = fuel;
-	}
-
-	public int getSpeedometer() {
-		return speedometer;
-	}
-
-	public void setSpeedometer(int speedometer) {
-		this.speedometer = speedometer;
-	}
-
-	public int getTachometer() {
-		return tachometer;
-	}
-
-	public void setTachometer(int tachometer) {
-		this.tachometer = tachometer;
-	}
-
-	public Gear getGear() {
-		return gear;
-	}
-
-	public void setGear(Gear gear) {
-		this.gear = gear;
-	}
-
-	public int getSteeringWheelAngle() {
-		return steeringWheelAngle;
-	}
-
-	public void setSteeringWheelAngle(int steeringWheelAngle) {
-		this.steeringWheelAngle = steeringWheelAngle;
-	}
-
-	public Garage getGarage() {
-		return garage;
-	}
-
-	public void setGarage(Garage garage) {
-		this.garage = garage;
-	}
-
-	public int getDistance() {
-		return distance;
-	}
-
-	public void setDistance(int distance) {
-		this.distance = distance;
-	}
-
-	public int getMAX_SPEED_REVERSE() {
-		return MAX_SPEED_REVERSE;
 	}
 
 	public void brake() {
@@ -279,6 +193,94 @@ public class Car implements Comparable<Car> {
 			return 0;
 		}
 
+	}
+
+	public String getPiloto() {
+		return piloto;
+	}
+
+	public void setPiloto(String piloto) {
+		this.piloto = piloto;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getMaxSpeed() {
+		return MAX_SPEED;
+	}
+
+	public String getFuel() {
+		return fuel;
+	}
+
+	public void setFuel(String fuel) {
+		this.fuel = fuel;
+	}
+
+	public int getSpeedometer() {
+		return speedometer;
+	}
+
+	public void setSpeedometer(int speedometer) {
+		this.speedometer = speedometer;
+	}
+
+	public int getTachometer() {
+		return tachometer;
+	}
+
+	public void setTachometer(int tachometer) {
+		this.tachometer = tachometer;
+	}
+
+	public Gear getGear() {
+		return gear;
+	}
+
+	public void setGear(Gear gear) {
+		this.gear = gear;
+	}
+
+	public int getSteeringWheelAngle() {
+		return steeringWheelAngle;
+	}
+
+	public void setSteeringWheelAngle(int steeringWheelAngle) {
+		this.steeringWheelAngle = steeringWheelAngle;
+	}
+
+	public Garage getGarage() {
+		return garage;
+	}
+
+	public void setGarage(Garage garage) {
+		this.garage = garage;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+
+	public int getMAX_SPEED_REVERSE() {
+		return MAX_SPEED_REVERSE;
 	}
 
 	public int getMAX_SPEED() {

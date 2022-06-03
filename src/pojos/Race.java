@@ -5,42 +5,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public class Race  implements Serializable {
+public abstract class Race  implements Serializable {
 
 	protected String raceName;
-	// quitar
 
 	protected ArrayList<Car> cars = new ArrayList<>();
 	protected HashMap<Car,Integer> podium = new HashMap<>();
 	protected Tournament tournament;
+	
 
-
-	public Race(String raceName, Tournament tournament) {
+	public Race(String raceName) {
 		super();
 		this.raceName = raceName;
-		this.tournament = tournament;
 	}
 
-
-	public Tournament getTournament() {
-		return tournament;
-	}
-
-
-	public void setTournament(Tournament tournament) {
-		this.tournament = tournament;
-	}
-
-
-	public void setCars(ArrayList<Car> cars) {
-		this.cars = cars;
-	}
-
-
-	public void setPodium(HashMap<Car, Integer> podium) {
-		this.podium = podium;
-	}
-
+	
+	public abstract void run();
 
 	public void insertCars() {
 		if (this.tournament.onlyOneGarage) {
@@ -62,14 +42,19 @@ public class Race  implements Serializable {
 	}
 
 
-
 	public void brakeStopAll() {
 		for (Car car : cars) {
 			car.brakeStop();
 		}
 	}
+	public Tournament getTournament() {
+		return tournament;
+	}
 
 
+	public void setTournament(Tournament tournament) {
+		this.tournament = tournament;
+	}
 
 
 

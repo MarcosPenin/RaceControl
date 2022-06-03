@@ -5,17 +5,11 @@ import java.util.Collections;
 
 public class EliminationRace extends Race {
 
-	/*
-	 * carreras de Eliminación (que tienen una serie de minutos previos para que los
-	 * pilotos se hagan a la pista, y al terminar esos minutos de calentamiento, se
-	 * irá retirando el coche que va en la última posición, cada minuto, hasta que
-	 * sólo quede un coche).
-	 * 
-	 */
+
 	private final int WARM_UP_MINUTS = 5;
 
-	public EliminationRace(String raceName, Tournament tournament) {
-		super(raceName, tournament);
+	public EliminationRace(String raceName) {
+		super(raceName);
 	}
 
 	public void run() {
@@ -36,6 +30,7 @@ public class EliminationRace extends Race {
 				System.out.println(car.getPiloto() + ":    " + car.getDistance());
 			}
 			Collections.sort(cars);
+			
 			if (cars.size() == 3) {
 				podium.put(cars.get(2), 3);
 			}
@@ -43,9 +38,9 @@ public class EliminationRace extends Race {
 				podium.put(cars.get(1), 2);
 			}
 
-			if(cars.get(cars.size()-1)==cars.get(cars.size()-2)) {
+			if (cars.get(cars.size() - 1) == cars.get(cars.size() - 2)) {
 				System.out.println("Empate en última posición, no hay eliminados en este minuto");
-			}else {
+			} else {
 				System.out.println(cars.get(cars.size() - 1).getPiloto() + " out");
 				cars.get(cars.size() - 1).brakeStop();
 				cars.remove(cars.size() - 1);

@@ -5,10 +5,11 @@ import java.util.ArrayList;
 public class Garage {
 
 	
-	
 	private String name;
 	private ArrayList<Car> cars = new ArrayList<>();
 
+	
+	//SOLO PRUEBAS, BORRAR
 	public Garage(String name) {
 		super();
 		this.name = name;
@@ -21,7 +22,6 @@ public class Garage {
 			this.cars.add(car);
 			car.setGarage(this);
 		}
-
 	}
 
 	public String getName() {

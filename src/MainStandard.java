@@ -30,8 +30,8 @@ public class MainStandard {
 		tournament1.addGarage(garage2);
 		tournament1.addGarage(garage3);
 				
-		StandarRace race1 = new StandarRace("Primera pista", tournament1);
-		StandarRace race2 = new StandarRace("Segunda pista", tournament1);
+		StandarRace race1 = new StandarRace("Primera pista");
+		StandarRace race2 = new StandarRace("Segunda pista");
 		tournament1.addRace(race1);
 		tournament1.addRace(race2);
 		
