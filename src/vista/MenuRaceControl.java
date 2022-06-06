@@ -3,6 +3,7 @@ package vista;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import operaciones.OpGarage;
 import operaciones.OpTorneo;
 import utilidades.ControlData;
 import utilidades.Menu;
@@ -33,32 +34,36 @@ public class MenuRaceControl {
 			case 3:
 				OpTorneo.printTournaments();
 				break;
+			case 4:
+				menuGarage();
 			}
 		} while (opMenu != 5);
 	}
 
-	public static void menuInsertar() {
-		Menu menuTablas = new Menu(opciones());
+	
+	public static void menuGarage() {
+		Menu menuTablas = new Menu(opGarage());
 		System.out.println("*********************************************************************");
 		System.out.println("¿Que desea añadir?");
 		menuTablas.printMenu();
 		byte op = ControlData.lerByte(sc);
 		switch (op) {
 		case 1:
-			//Anadir.anadirAutor();
+			OpGarage.createGarage();
 			break;
 		case 2:
-			//Anadir.anadirLibro();
+			OpGarage.deleteGarage();
 			break;
 		case 3:
-			//Anadir.vincularLibro();
+			OpGarage.addCar();
 			break;
-
+		case 4:
+			OpGarage.addGarageToTournament();
+			break;
 		}
-
 	}
 
-
+	
 
 	static ArrayList<String> opciones() {
 		ArrayList<String> opciones = new ArrayList<String>();
@@ -77,10 +82,14 @@ public class MenuRaceControl {
 		return opciones;
 	}
 	
-	static ArrayList<String> tablas2() {
+	static ArrayList<String> opGarage() {
 		ArrayList<String> opciones = new ArrayList<String>();
-		opciones.add("Autor");
-		opciones.add("Libro");
+		opciones.add("Crear garages");
+		opciones.add("Borrar garages");
+		opciones.add("Añadir coches a un garage");
+		opciones.add("Instribir garages a un torneo");
+		
+		
 		opciones.add("Volver");
 		return opciones;
 	}

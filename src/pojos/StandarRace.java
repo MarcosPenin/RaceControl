@@ -38,8 +38,12 @@ public class StandarRace extends Race {
 		}
 		Collections.sort(cars);
 		setPodium();
-
 		brakeStopAll();
+		
+		System.out.println("CARRERA TERMINADA. PODIUM: ");
+		getPodium().forEach((i, j) -> System.out.println("Coche: " + i + ": Posición: " + j));
+
+		
 
 		tournament.actualiceScoreTable(this);
 		tournament.setDrivenRaces(tournament.getDrivenRaces() + 1);

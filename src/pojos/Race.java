@@ -29,7 +29,7 @@ public abstract class Race  implements Serializable {
 			Random random = new Random();
 			for (Garage garage : tournament.getGarages()) {
 				int max = garage.getCars().size();
-				int position = random.nextInt(max - 0) + 0;
+				int position = random.nextInt(max-1) ;
 				this.cars.add(garage.getCars().get(position));
 			}
 		}

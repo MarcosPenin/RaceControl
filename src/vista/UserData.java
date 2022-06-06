@@ -57,7 +57,6 @@ public class UserData {
 		case 2:
 			onlyOne = true;
 			break;
-
 		}
 		return onlyOne;
 	}
@@ -89,7 +88,7 @@ public class UserData {
 
 	public static ArrayList<Garage> requestGarages(boolean onlyOneGarage) {
 		ArrayList<Garage> garages = new ArrayList<Garage>();
-		boolean anotherGarage = false, addNow;
+		boolean anotherGarage = false, addNow, flag = false;
 		Garage newGarage;
 
 		System.out.println("¿Quieres añadir los garages ahora?");
@@ -108,17 +107,18 @@ public class UserData {
 
 				}
 				int op = ControlData.lerPositiveInt(sc);
-				newGarage = Almacen.getGarages().get(i - 1);
+				newGarage = Almacen.getGarages().get(op - 1);
 
 				for (Garage garage : garages) {
 					if (garage.getName() == newGarage.getName()) {
 						System.out.println("Ese garage ya participa en el torneo");
-					} else {
-						garages.add(newGarage);
+						flag = true;
 					}
 				}
+				if (!flag) {
+					garages.add(newGarage);
+				}
 
-				garages.add(Almacen.getGarages().get(i - 1));
 				if (!onlyOneGarage) {
 					System.out.println("¿Quieres introducir otro garage?");
 					anotherGarage = requestYesNo();
@@ -154,7 +154,7 @@ public class UserData {
 	}
 
 	public static boolean requestElimination() {
-		System.out.println("¿Quieres introducir una carrera normal o de eliminación?");
+		System.out.println("¿La carrera tendrá el formato normal o de eliminación?");
 		ArrayList<String> eliminacion = new ArrayList<String>();
 		eliminacion.add("Normal");
 		eliminacion.add("Eliminación");
@@ -175,12 +175,10 @@ public class UserData {
 		}
 		return opEliminacion;
 	}
-	
-	
-	
-	
+
 	public static boolean seeActualOrAllTournaments() {
-		System.out.println("¿Quieres ver los torneos que se están disputando ahora o el histórico completo de torneos?");
+		System.out
+				.println("¿Quieres ver los torneos que se están disputando ahora o el histórico completo de torneos?");
 		ArrayList<String> opciones = new ArrayList<String>();
 		opciones.add("Los torneos que se están disputando");
 		opciones.add("Todos los torneos");
@@ -201,11 +199,40 @@ public class UserData {
 		}
 		return op;
 	}
-	
-	
-	
-	
-	
-	
+
+	public static String requestGarageName() {
+		System.out.println("¿Cómo se llamará el nuevo garage?");
+		String name = sc.nextLine();
+		return name;
+
+	}
+
+	public static ArrayList<Car> requestCarsGarage() {
+		ArrayList<Car> cars = new ArrayList<Car>();
+		Car nextCar;
+		boolean another = true;
+		System.out.println("Tienes que añadir al menos un coche");
+		do {
+			nextCar = addCar();
+			System.out.println("¿Quieres añadir otro coche?");
+			another = requestYesNo();
+		} while (another);
+		return cars;
+	}
+
+	public static Car addCar() {
+		System.out.println("Introduce el nombre del piloto");
+		String piloto = sc.nextLine();
+		System.out.println("Introduce la marca");
+		String marca = sc.nextLine();
+		System.out.println("Introduce el modelo");
+		String modelo = sc.nextLine();
+		System.out.println("Introduce el tipo de combustible");
+		String combustible = sc.nextLine();
+
+		Car car = new Car(piloto, marca, modelo, combustible);
+		return car;
+
+	}
 
 }

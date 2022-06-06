@@ -95,6 +95,8 @@ public class Tournament {
 	
 	public void setWinners() {
 		int maxScore = 0;
+		System.out.println("**********************************************");
+		
 		if (drivenRaces == numRaces) {
 			for (int valor : scoreTable.values()) {
 				if (valor > maxScore) {

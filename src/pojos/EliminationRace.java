@@ -55,6 +55,10 @@ public class EliminationRace extends Race {
 		}
 		podium.put(cars.get(0), 1);
 		cars.get(0).brakeStop();
+		
+		System.out.println("CARRERA TERMINADA. PODIUM: ");
+		getPodium().forEach((i, j) -> System.out.println("Coche: " + i + ": Posición: " + j));
+
 
 		tournament.actualiceScoreTable(this);
 		tournament.setDrivenRaces(tournament.getDrivenRaces() + 1);

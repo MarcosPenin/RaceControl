@@ -27,24 +27,24 @@ public class OpTorneo {
 			String name = sc.nextLine();
 			for (Tournament t : Almacen.getTorneosActuales()) {
 				if (name.equalsIgnoreCase(t.getName())) {
-					if (t.isStarted()) {
+					if (!t.getGarages().isEmpty()) {
 						startRace(t);
 						flag = true;
+						
 					} else {
 						System.out.println("El torneo no empezará hasta que se inscriban los garages");
 						flag = true;
 					}
-
+					break;
 				}
 			}
 			if (!flag) {
 				System.out.println("No se ha encontrado ese torneo, no se ha podidio iniciar la carrera");
 			}
-
 		}
-
 	}
 
+	
 	public static void startRace(Tournament t) {
 		Race race = t.getRaces().poll();
 		if (race == null) {
@@ -66,6 +66,7 @@ public class OpTorneo {
 			tournament = new Tournament(name, races, onlyOneGarage);
 		} else {
 			tournament = new Tournament(name, races, onlyOneGarage, garages);
+			tournament.setStarted(true);
 			tournament.insertScoreTable();
 		}
 

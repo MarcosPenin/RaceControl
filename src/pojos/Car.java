@@ -219,10 +219,6 @@ public class Car implements Comparable<Car> {
 		this.model = model;
 	}
 
-	public int getMaxSpeed() {
-		return MAX_SPEED;
-	}
-
 	public String getFuel() {
 		return fuel;
 	}
