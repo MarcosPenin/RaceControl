@@ -20,7 +20,7 @@ public class Garage {
 		this.name = name;
 		for (Car car : cars) {
 			this.cars.add(car);
-			car.setGarage(this);
+			car.setGarage(name);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class Garage {
 
 	public void addCar(Car car) {
 		cars.add(car);
-		car.setGarage(this);
+		car.setGarage(name);
 	}
 
 }

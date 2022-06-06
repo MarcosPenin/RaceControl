@@ -9,7 +9,7 @@ import pojos.Tournament;
 
 public class Almacen {
 
-	private static HashSet<Car> cars = new HashSet<>();
+
 	private static ArrayList<Tournament> tournaments = new ArrayList<>();
 	private static ArrayList<Tournament> actualTournaments = new ArrayList<>();
 	private static ArrayList<Garage> garages = new ArrayList<>();
@@ -18,9 +18,6 @@ public class Almacen {
 		return garages;
 	}
 
-	public static HashSet<Car> getCoches() {
-		return cars;
-	}
 
 	public static ArrayList<Tournament> getTorneos() {
 		return tournaments;
@@ -30,10 +27,27 @@ public class Almacen {
 		return actualTournaments;
 	}
 
-	public static void addCar(Car car) {
-		cars.add(car);
+	public static ArrayList<Tournament> getTournaments() {
+		return tournaments;
 	}
-	
+
+
+	public static void setTournaments(ArrayList<Tournament> tournaments) {
+		Almacen.tournaments = tournaments;
+
+	}
+
+
+	public static void setActualTournaments(ArrayList<Tournament> actualTournaments) {
+		Almacen.actualTournaments = actualTournaments;
+	}
+
+
+	public static void setGarages(ArrayList<Garage> garages) {
+		Almacen.garages = garages;
+	}
+
+
 	public static void addGarage(Garage garage) {
 		garages.add(garage);
 	}

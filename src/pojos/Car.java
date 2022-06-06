@@ -19,7 +19,7 @@ public class Car implements Comparable<Car> {
 	private Gear gear = Gear.N;
 	private int steeringWheelAngle = 0;
 
-	private Garage garage;
+	private String garage;
 	private int totalDistance;
 	private int distance;
 
@@ -259,11 +259,11 @@ public class Car implements Comparable<Car> {
 		this.steeringWheelAngle = steeringWheelAngle;
 	}
 
-	public Garage getGarage() {
+	public String getGarage() {
 		return garage;
 	}
 
-	public void setGarage(Garage garage) {
+	public void setGarage(String garage) {
 		this.garage = garage;
 	}
 
@@ -292,7 +292,7 @@ public class Car implements Comparable<Car> {
 	}
 
 	public String toString() {
-		return "Piloto: " + this.piloto + "     Garage: " + this.garage.getName();
+		return "Piloto: " + this.piloto + "     Garage: " + this.garage;
 	}
 
 }

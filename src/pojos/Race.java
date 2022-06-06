@@ -11,7 +11,7 @@ public abstract class Race  implements Serializable {
 
 	protected ArrayList<Car> cars = new ArrayList<>();
 	protected HashMap<Car,Integer> podium = new HashMap<>();
-	protected Tournament tournament;
+	protected transient Tournament tournament;
 	
 
 	public Race(String raceName) {

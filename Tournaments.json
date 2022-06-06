@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Torneo 1",
+    "drivenRaces": 0,
+    "numRaces": 2,
+    "onlyOneGarage": false,
+    "started": false,
+    "finished": true,
+    "races": [
+      {
+        "WARM_UP_MINUTS": 5,
+        "raceName": "Carrera 1",
+        "cars": [],
+        "podium": {}
+      },
+      {
+        "WARM_UP_MINUTS": 5,
+        "raceName": "Carrera 2",
+        "cars": [],
+        "podium": {}
+      }
+    ],
+    "garages": [
+      {
+        "name": "Garage 1",
+        "cars": [
+          {
+            "piloto": "Piloto 1",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 1",
+            "totalDistance": 0,
+            "distance": 0
+          },
+          {
+            "piloto": "Piloto 2",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 1",
+            "totalDistance": 0,
+            "distance": 0
+          },
+          {
+            "piloto": "Piloto 3",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 1",
+            "totalDistance": 0,
+            "distance": 0
+          }
+        ]
+      },
+      {
+        "name": "Garage 2",
+        "cars": [
+          {
+            "piloto": "Piloto 4",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 2",
+            "totalDistance": 0,
+            "distance": 0
+          },
+          {
+            "piloto": "Piloto 5",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 2",
+            "totalDistance": 0,
+            "distance": 0
+          },
+          {
+            "piloto": "Piloto 6",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 2",
+            "totalDistance": 0,
+            "distance": 0
+          }
+        ]
+      }
+    ],
+    "winners": []
+  }
+]

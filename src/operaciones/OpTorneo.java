@@ -8,6 +8,7 @@ import persistencia.Almacen;
 import pojos.Garage;
 import pojos.Race;
 import pojos.Tournament;
+import utilidades.ControlData;
 import vista.UserData;
 
 public class OpTorneo {
@@ -19,32 +20,30 @@ public class OpTorneo {
 		if (Almacen.getTorneosActuales().isEmpty()) {
 			System.out.println("Primero debes iniciar un torneo");
 		} else {
-			System.out.println("Actualmente se están disputando los siguientes torneos:");
+
+			System.out.println("Selecciona un torneo:");
+
+			int i = 0;
 			for (Tournament t : Almacen.getTorneosActuales()) {
-				System.out.println(t.getName());
+				i++;
+				System.out.println(i + ": " + t.getName());
 			}
-			System.out.println("Introduce el nombre del torneo donde quieras iniciar tu carrera");
-			String name = sc.nextLine();
-			for (Tournament t : Almacen.getTorneosActuales()) {
-				if (name.equalsIgnoreCase(t.getName())) {
-					if (!t.getGarages().isEmpty()) {
-						startRace(t);
-						flag = true;
-						
-					} else {
-						System.out.println("El torneo no empezará hasta que se inscriban los garages");
-						flag = true;
-					}
-					break;
-				}
+
+			int op = ControlData.lerPositiveInt(sc);
+			Tournament t = Almacen.getTorneosActuales().get(op - 1);
+
+			if (!t.getGarages().isEmpty()) {
+				startRace(t);
+				flag = true;
+
+			} else {
+				System.out.println("El torneo no empezará hasta que se inscriban los garages");
+				flag = true;
 			}
-			if (!flag) {
-				System.out.println("No se ha encontrado ese torneo, no se ha podidio iniciar la carrera");
-			}
+
 		}
 	}
 
-	
 	public static void startRace(Tournament t) {
 		Race race = t.getRaces().poll();
 		if (race == null) {

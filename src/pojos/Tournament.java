@@ -19,8 +19,8 @@ public class Tournament {
 	private boolean started=false;
 	private boolean finished=true;
 	
-	Queue<Race> races= new LinkedList<>();
-	private ArrayList<Garage> garages = new ArrayList<Garage>();
+	private Queue<Race> races= new LinkedList<>();
+	private  ArrayList<Garage> garages = new ArrayList<Garage>();
 	private HashMap<Car, Integer> scoreTable = new HashMap<>();
 	private ArrayList<Car> winners = new ArrayList<>();
 	
