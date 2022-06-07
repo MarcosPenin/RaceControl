@@ -8,6 +8,12 @@ import operaciones.OpTorneo;
 import utilidades.ControlData;
 import utilidades.Menu;
 
+
+/**
+ *Clase con menús para la aplicación
+ *
+ */
+
 public class MenuRaceControl {
 
 	static Scanner sc=new Scanner(System.in);
@@ -95,15 +101,6 @@ public class MenuRaceControl {
 	}
 	
 
-	static ArrayList<String> consultas() {
-		ArrayList<String> opciones = new ArrayList<String>();
-		opciones.add("Buscar libro por título");
-		opciones.add("Buscar libros de un autor");
-		opciones.add("Ver todos los libros");
-		opciones.add("Ver todos los autores con sus libros");
-		opciones.add("Volver");
-		return opciones;
-	}
 
 }
 

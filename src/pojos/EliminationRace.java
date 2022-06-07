@@ -12,6 +12,23 @@ public class EliminationRace extends Race {
 		super(raceName);
 	}
 
+	
+	/**
+	 *Simula la celebración de una carrera Standard, acelerando o decelerando los participantes
+	 *una vez por minuto.  
+	 *
+	 *Los primeros minutos son de calentamiento, los coches van avanzando pero no se elimina a nadie. 
+	 *
+	 *A partir de ahí cada minuto se elimina al coche que va en última posición, finalizando la carrera
+	 *cuando solo queda uno. En caso de empate en última posición no se eliminará a nadie en ese minuto
+	 *
+	 *Una vez finalizada la carrera calcula el podium y lo muestra, además de actualizar las puntuaciones
+	 *generales del torneo. 
+	 *
+	 *Si es la última carrera del torneo establece los ganadores. 
+	 * 
+	 * @return Nada
+	 */
 	public void run() {
 		insertCars();
 		startCars();

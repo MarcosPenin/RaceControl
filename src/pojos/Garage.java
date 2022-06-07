@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Garage {
 
-	
 	private String name;
 	private ArrayList<Car> cars = new ArrayList<>();
 

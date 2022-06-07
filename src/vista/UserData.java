@@ -19,6 +19,11 @@ public class UserData {
 
 	static Scanner sc = new Scanner(System.in);
 
+	/**
+	 * Pide el nombre para un torneo
+	 * @return El nombre del torneo
+	 */
+	
 	public static String requestName() {
 		String name = "";
 		boolean valido = true;
@@ -37,6 +42,12 @@ public class UserData {
 		return name;
 	}
 
+	
+	/**
+	 * Pregunta al usuario si un torneo se reservará a un solo garage o tendrá varios participantes
+	 * @return False si participan varios garages, True si solo participa un garage
+	 */
+	
 	public static boolean requestOnlyOneGarage() {
 		boolean onlyOne = false;
 
@@ -61,6 +72,13 @@ public class UserData {
 		return onlyOne;
 	}
 
+	
+	
+	/**
+	 * Pide un número indeterminado de carreras para un torneo
+	 * @return Las carreras del torneo
+	 */
+	
 	public static Queue<Race> requestRaces() {
 		Queue<Race> races = new LinkedList<>();
 		boolean anotherRace = true;
@@ -86,6 +104,12 @@ public class UserData {
 		return races;
 	}
 
+	
+	/**
+	 * Permite seleccionar los garages que participarán en un torneo de entre los garages guardados
+	 * @return Los garages que partiparán en el torneo
+	 */
+	
 	public static ArrayList<Garage> requestGarages(boolean onlyOneGarage) {
 		ArrayList<Garage> garages = new ArrayList<Garage>();
 		boolean anotherGarage = false, addNow, flag = false;
@@ -131,6 +155,10 @@ public class UserData {
 		return garages;
 	}
 
+	/**
+	 * Permite escoger entre sí o no
+	 * @return True para sí y False para no
+	 */
 	private static boolean requestYesNo() {
 
 		ArrayList<String> opciones = new ArrayList<String>();
@@ -153,6 +181,10 @@ public class UserData {
 		return op;
 	}
 
+	/**
+	 * Pregunta si una carrera será de eliminación o standard
+	 * @return True para Eliminacion, false para Standard
+	 */
 	public static boolean requestElimination() {
 		System.out.println("¿La carrera tendrá el formato normal o de eliminación?");
 		ArrayList<String> eliminacion = new ArrayList<String>();
@@ -176,6 +208,12 @@ public class UserData {
 		return opEliminacion;
 	}
 
+	
+	
+	/**
+	 * Pregunta si el usuario quiere visualizar los torneos actuales o el histórico de torneos
+	 * @return True para los actuales, False para el histórico
+	 */
 	public static boolean seeActualOrAllTournaments() {
 		System.out
 				.println("¿Quieres ver los torneos que se están disputando ahora o el histórico completo de torneos?");
@@ -200,6 +238,10 @@ public class UserData {
 		return op;
 	}
 
+	/**
+	 * Pide el nombre para un nuevo garage
+	 * @return El nombre del garage
+	 */
 	public static String requestGarageName() {
 		System.out.println("¿Cómo se llamará el nuevo garage?");
 		String name = sc.nextLine();
@@ -207,6 +249,10 @@ public class UserData {
 
 	}
 
+	/**
+	 * Pide los coches para un nuevo garage
+	 * @return Los coches del nuevo garage
+	 */
 	public static ArrayList<Car> requestCarsGarage() {
 		ArrayList<Car> cars = new ArrayList<Car>();
 		Car nextCar;
@@ -220,6 +266,11 @@ public class UserData {
 		return cars;
 	}
 
+	
+	/**
+	 * Pide los datos de un nuevo coche
+	 * @return El nuevo coche
+	 */
 	public static Car addCar() {
 		System.out.println("Introduce el nombre del piloto");
 		String piloto = sc.nextLine();

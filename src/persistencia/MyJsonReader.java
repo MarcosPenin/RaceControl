@@ -20,8 +20,15 @@ import pojos.Race;
 import pojos.StandarRace;
 import pojos.Tournament;
 
+/**
+ * Clase para recuperar los diferentes datos que usa el programa desde ficheros JSON
+ */
+
 public class MyJsonReader {
 
+/**
+ * Recupera todos los objetos guardados y sincroniza los objetos
+ */
 	public static void readAlmacenJson() {
 		readTournaments();
 		readActualTournaments();
@@ -31,6 +38,10 @@ public class MyJsonReader {
 
 	}
 
+	
+	/**
+	 * Recupera las carreras guardadas
+	 */
 	public static void readRaces() {
 		Reader reader;
 		try {
@@ -56,7 +67,10 @@ public class MyJsonReader {
 		}
 
 	}
-
+	
+/**
+ * Recupera los torneos guardados
+ */
 	public static void readTournaments() {
 		Reader reader;
 		try {
@@ -72,6 +86,9 @@ public class MyJsonReader {
 
 	}
 
+	/**
+	 * Recupera los torneos actuales guardados
+	 */
 	public static void readActualTournaments() {
 		Reader reader;
 		try {
@@ -86,6 +103,9 @@ public class MyJsonReader {
 
 	}
 
+	/**
+	 * Recupera los garages guardados
+	 */
 	public static void readGarages() {
 		Reader reader;
 		try {
@@ -100,6 +120,9 @@ public class MyJsonReader {
 
 	}
 
+	/**
+	 * Vincula las carreras guardadas a los torneos donde se celebran
+	 */
 	public static void synchronizeRaces() {
 		Queue<Race> races = new LinkedList<>();
 		for (Tournament t : Almacen.getActualTournaments()) {

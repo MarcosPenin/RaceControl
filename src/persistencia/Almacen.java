@@ -2,25 +2,24 @@ package persistencia;
 
 import java.util.ArrayList;
 
-import pojos.EliminationRace;
-import pojos.Garage;
-import pojos.Race;
-import pojos.StandarRace;
-import pojos.Tournament;
+import pojos.*;
 
+
+/**
+ * Contenedor para los datos almacenados por la aplicación
+ * @author github.com/MarcosPenin
+ *
+ */
 public class Almacen {
 
 	private static ArrayList<Tournament> tournaments = new ArrayList<>();
 	private static ArrayList<Tournament> actualTournaments = new ArrayList<>();
 	private static ArrayList<Garage> garages = new ArrayList<>();
-	private static ArrayList<Race> races = new ArrayList<>();
 
 	private static ArrayList<StandarRace> standardRaces = new ArrayList<>();
 	private static ArrayList<EliminationRace> eliminationRaces = new ArrayList<>();
 
-	public static ArrayList<Race> getRaces() {
-		return races;
-	}
+
 
 	public static ArrayList<StandarRace> getStandardRaces() {
 		return standardRaces;
@@ -42,9 +41,7 @@ public class Almacen {
 		return actualTournaments;
 	}
 
-	public static void setRaces(ArrayList<Race> races) {
-		Almacen.races = races;
-	}
+
 
 	public static ArrayList<Garage> getGarages() {
 		return garages;
@@ -84,9 +81,6 @@ public class Almacen {
 		actualTournaments.add(tournament);
 	}
 
-	public static void addRace(Race race) {
-		races.add(race);
-	}
 	
 	public static void addStandardRace(StandarRace race) {
 		standardRaces.add(race);

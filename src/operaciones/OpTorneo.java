@@ -14,6 +14,10 @@ import vista.UserData;
 public class OpTorneo {
 	static Scanner sc = new Scanner(System.in);
 
+	
+	/**
+	 * Selecciona un torneo entre los que se están celebrando actualmente
+	 */
 	public static void chooseTournament() {
 		boolean flag = false;
 
@@ -44,6 +48,13 @@ public class OpTorneo {
 		}
 	}
 
+	
+	/**
+	 * Comienza una carrera
+	 * 
+	 * @param t
+	 * 		El torneo donde se celebrará la carrera
+	 */
 	public static void startRace(Tournament t) {
 		Race race = t.getRaces().poll();
 		if (race == null) {
@@ -53,9 +64,13 @@ public class OpTorneo {
 		}
 	}
 
+	
+	/**
+	 * Crea un torneo nuevo con sus carreras. Se puede introducir ahora los garages
+	 * o dejarlo para más tarde
+	 */
 	public static void createTournament() {
 		Tournament tournament;
-
 		String name = UserData.requestName();
 		boolean onlyOneGarage = UserData.requestOnlyOneGarage();
 		Queue<Race> races = UserData.requestRaces();
@@ -65,7 +80,6 @@ public class OpTorneo {
 			tournament = new Tournament(name, races, onlyOneGarage);
 		} else {
 			tournament = new Tournament(name, races, onlyOneGarage, garages);
-			tournament.setStarted(true);
 			tournament.insertScoreTable();
 		}
 
@@ -73,6 +87,9 @@ public class OpTorneo {
 
 	}
 
+	/**
+	 * Muestra el listado de torneos actuales o el histórico de torneos 
+	 */
 	public static void printTournaments() {
 		boolean onlyActualTournaments = UserData.seeActualOrAllTournaments();
 

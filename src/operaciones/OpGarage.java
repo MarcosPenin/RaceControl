@@ -12,10 +12,19 @@ import pojos.Tournament;
 import utilidades.ControlData;
 import vista.UserData;
 
+
+/**
+ * Opciones para que el usuario gestione los garages guardados
+ *
+ */
 public class OpGarage {
 
 	static Scanner sc = new Scanner(System.in);
 
+	
+	/**
+	 * Crea un garage nuevo
+	 */
 	public static void createGarage() {
 		Garage garage;
 		String name = UserData.requestGarageName();
@@ -26,8 +35,10 @@ public class OpGarage {
 		
 	}
 
+/**
+ * Elimina un garage	
+ */
 	public static void deleteGarage() {
-		boolean flag = false;
 		if (Almacen.getGarages().isEmpty()) {
 			System.out.println("Primero debes crear un garage");
 		} else {
@@ -44,8 +55,11 @@ public class OpGarage {
 
 	}
 
+	
+	/**
+	 * Añade un coche a un garage existente
+	 */
 	public static void addCar() {
-		boolean flag = false;
 		if (Almacen.getGarages().isEmpty()) {
 			System.out.println("Primero debes crear un garage");
 		} else {
@@ -65,8 +79,11 @@ public class OpGarage {
 
 	}
 
+	
+	/**
+	 * Añade un garage ya existente a un torneo 
+	 */
 	public static void addGarageToTournament() {
-		boolean flag = false;
 		if (Almacen.getGarages().isEmpty()) {
 			System.out.println("Primero debes crear un garage");
 		} else if (Almacen.getTorneosActuales().isEmpty()) {

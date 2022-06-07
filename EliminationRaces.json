@@ -2,11 +2,30 @@
   {
     "WARM_UP_MINUTS": 5,
     "raceName": "Carrera 2",
-    "cars": [],
-    "podium": {},
+    "cars": [
+      {
+        "piloto": "Piloto 4",
+        "brand": "c",
+        "model": "c",
+        "MAX_SPEED": 120,
+        "MAX_SPEED_REVERSE": 20,
+        "fuel": "c",
+        "speedometer": 0,
+        "tachometer": 0,
+        "gear": "N",
+        "steeringWheelAngle": 0,
+        "garage": "Garage 2",
+        "totalDistance": 0,
+        "distance": 0
+      }
+    ],
+    "podium": {
+      "Piloto 4": 1,
+      "Piloto 1": 2
+    },
     "tournament": {
       "name": "Torneo 1",
-      "drivenRaces": 1,
+      "drivenRaces": 2,
       "numRaces": 2,
       "onlyOneGarage": false,
       "started": false,
@@ -115,13 +134,15 @@
       ],
       "scoreTable": {
         "Piloto 3": 0,
-        "Piloto 4": 10,
+        "Piloto 4": 15,
         "Piloto 1": 5,
-        "Piloto 2": 0,
+        "Piloto 2": 10,
         "Piloto 5": 0,
         "Piloto 6": 0
       },
-      "winners": []
+      "winners": [
+        "Piloto 4"
+      ]
     }
   }
 ]

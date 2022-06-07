@@ -18,6 +18,17 @@ public class StandarRace extends Race {
 		this.horas = horas;
 	}
 
+	/**
+	 *Simula la celebración de una carrera Standard, acelerando o decelerando los participantes
+	 *una vez por minuto hasta que se alcanza el tiempo fijado. 
+	 *
+	 *Una vez finalizada la carrera calcula el podium y lo muestra, además de actualizar las puntuaciones
+	 *generales del torneo. 
+	 *
+	 *Si es la última carrera del torneo establece los ganadores. 
+	 * 
+	 * @return Nada
+	 */
 	public void run() {
 		System.out.println("COMIENZA LA CARRERA "+ getRaceName().toUpperCase());
 		
@@ -55,6 +66,14 @@ public class StandarRace extends Race {
 		}
 	}
 
+	
+	/**
+	 *Establece las mayores distancias recorridas por los participantes y sitúa en el podio
+	 *a los pilotos de los coches que han recorrido esas distancias. Las posiciones del podio se pueden compartir
+	 * 
+	 * @return Nada
+	 */
+	
 	public void setPodium() {
 		int distanceFirst = 0, distanceSecond = 0, distanceThird = 0;
 		for (Car car : cars) {

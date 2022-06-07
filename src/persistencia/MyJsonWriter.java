@@ -13,8 +13,16 @@ import pojos.Race;
 import pojos.StandarRace;
 import pojos.Tournament;
 
+
+/**
+ * Clase
+ *
+ */
 public class MyJsonWriter {
 
+	/**
+	 * Clase para guardar los diferentes datos que usa el programa en ficheros JSON
+	 */
 	public static void writeAlmacenToJson() {
 		writeTournaments();
 		writeActualTournaments();
@@ -24,6 +32,10 @@ public class MyJsonWriter {
 
 	}
 
+	
+	/**
+	 * Extrae las carreras de todos los torneos para guardarlas aparte
+	 */
 	public static void saveRaces() {
 		for (Tournament t : Almacen.getTorneos()) {
 			if (t.getRaces() != null) {
@@ -40,7 +52,10 @@ public class MyJsonWriter {
 		}
 
 	}
-
+	
+/**
+ * Guarda todas las carreras
+ */
 	public static void writeRaces() {
 
 		Gson gsonRaces = new GsonBuilder().setPrettyPrinting().create();
@@ -58,6 +73,10 @@ public class MyJsonWriter {
 
 	}
 
+	
+	/**
+	 * Guarda todos los torneos
+	 */
 	public static void writeTournaments() {
 		Gson gsonTournaments = new GsonBuilder().setPrettyPrinting().create();
 		try (Writer writerTournaments = Files.newBufferedWriter(Paths.get("Tournaments.json"))) {
@@ -68,6 +87,10 @@ public class MyJsonWriter {
 
 	}
 
+	
+	/**
+	 * Guarda los torneos actuales
+	 */
 	public static void writeActualTournaments() {
 		Gson gsonActualTournaments = new GsonBuilder().setPrettyPrinting().create();
 		try (Writer writerActualTournaments = Files.newBufferedWriter(Paths.get("ActualTournaments.json"))) {
@@ -78,6 +101,10 @@ public class MyJsonWriter {
 
 	}
 
+	
+	/**
+	 * Guarda los garages actuales
+	 */
 	public static void writeGarages() {
 		Gson gsonGarages = new GsonBuilder().setPrettyPrinting().create();
 		try {

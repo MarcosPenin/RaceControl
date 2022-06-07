@@ -4,22 +4,22 @@ import persistencia.*;
 import vista.MenuRaceControl;
 import pojos.*;
 
+
+/**
+ * Programa para simular el funcionamiento de un Control de Carreras
+ * para una serie de torneos automobilísticos
+ * @author github.com/MarcosPenin
+ *
+ */
 public class RaceControlApp {
 	public static void main(String[] args) {
-		
-	
-		StartData.addData();
-//		MyJsonReader.readAlmacenJson();
-//
-//		for(Tournament t:Almacen.getActualTournaments()) {
-//			System.out.println(t.getNumRaces());
-//			System.out.println(t.getDrivenRaces());
-//		}
-		
+
+//		StartData.addData();
+		MyJsonReader.readAlmacenJson();
+
 		MenuRaceControl.menuPrincipal();
 
-		
-//		MyJsonWriter.writeAlmacenToJson();
-		
+		MyJsonWriter.writeAlmacenToJson();
+
 	}
 }

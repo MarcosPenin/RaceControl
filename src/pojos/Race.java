@@ -6,7 +6,7 @@ import java.util.Random;
 
 
 
-public class Race {
+public abstract class Race {
 
 	protected String raceName;
 
@@ -21,11 +21,25 @@ public class Race {
 	}
 
 	
-	public  void run() {}
+	/**
+	 *Simula la celebración de una carrera. Desarrollado en las subclases
+	 * 
+	 * @return Nada
+	 */	
+	public abstract void run() ;
 
+	
+	/**
+	 *Accede al torneo asociado a esta carrera. Si es un torneo de un solo garage añade todos sus coches
+	 *a la carrera. Si es de varios escoge aleatoriamente un coche de cada garage y lo añade a la carrera
+	 * 
+	 * @return Nada
+	 */
 	public void insertCars() {
 		if (this.tournament.onlyOneGarage) {
-			cars = tournament.getGarages().get(0).getCars();
+			for(Car car: tournament.getGarages().get(0).getCars()) {
+				cars.add(car);
+			}
 		} else {
 			Random random = new Random();
 			for (Garage garage : tournament.getGarages()) {
@@ -36,13 +50,23 @@ public class Race {
 		}
 	}
 
+	/**
+	 *Enciende todos los coches que participan en la carrera
+	 * 
+	 * @return Nada
+	 */
+	
 	public void startCars() {
 		for (Car car : cars) {
 			car.start();
 		}
 	}
 
-
+	/**
+	 *Frena todos los coches que participan en la carrera y los apaga
+	 * 
+	 * @return Nada
+	 */
 	public void brakeStopAll() {
 		for (Car car : cars) {
 			car.brakeStop();

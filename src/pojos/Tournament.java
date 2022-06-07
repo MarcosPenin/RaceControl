@@ -14,22 +14,12 @@ public class Tournament {
 	private int drivenRaces;
 	private int numRaces = 10;
 	boolean onlyOneGarage;
-	private boolean started = false;
-	private boolean finished = true;
 
 	private transient Queue<Race> races = new LinkedList<>();
 	private ArrayList<Garage> garages = new ArrayList<Garage>();
 	private HashMap<String, Integer> scoreTable = new HashMap<>();
 	private ArrayList<String> winners = new ArrayList<>();
 
-	// BORRAR, SOLO PARA PRUEBAS
-	public Tournament(String name, boolean onlyOneGarage, int numRaces) {
-		super();
-		this.name = name;
-		this.onlyOneGarage = onlyOneGarage;
-		this.numRaces = numRaces;
-	}
-	
 	
 
 	public Tournament(String name, Queue<Race> races, boolean onlyOneGarage) {
@@ -56,6 +46,14 @@ public class Tournament {
 
 	}
 
+	
+	/**
+	 *Crea una tabla de puntuaciones con todos los coches de todos los garages inscritos.
+	 *Se establece una puntuación de 0 para todos ellos
+	 * 
+	 * @return Nada
+	 */
+	
 	public void insertScoreTable() {
 		if (!garages.isEmpty()) {
 			for (Garage garage : this.garages) {
@@ -68,6 +66,15 @@ public class Tournament {
 		}
 	}
 
+	
+	/**
+	 * Suma los resultados de una carrera a la clasificación general. 10 puntos para los ganadores, 
+	 * 5 para los segundos y 3 para los terceros
+	 * 
+	 * @param race
+	 * 		La carrera cuyo podio se añadirá a la clasificación general
+	 * @return Nada
+	 */
 	public void actualiceScoreTable(Race race) {
 		if (!scoreTable.isEmpty()) {
 			for (Map.Entry<String, Integer> podiumPosition : race.podium.entrySet()) {
@@ -88,6 +95,12 @@ public class Tournament {
 		}
 	}
 
+	/**
+	 *Busca los coches con más puntos de la tabla de puntuaciones y los guarda como ganadores del torneo
+	 * 
+	 * @return Nada
+	 */
+
 	public void setWinners() {
 		int maxScore = 0;
 		System.out.println("**********************************************");
@@ -103,7 +116,6 @@ public class Tournament {
 					winners.add(entry.getKey());
 				}
 			}
-			finished = true;
 			Almacen.getTorneosActuales().remove(this);
 			System.out.println("EL TORNEO HA TERMINADO. GANADORES: ");
 			for (String x : winners) {
@@ -188,22 +200,6 @@ public class Tournament {
 
 	public void addGarage(Garage garage) {
 		garages.add(garage);
-	}
-
-	public boolean isStarted() {
-		return started;
-	}
-
-	public void setStarted(boolean started) {
-		this.started = started;
-	}
-
-	public boolean isFinished() {
-		return finished;
-	}
-
-	public void setFinished(boolean finished) {
-		this.finished = finished;
 	}
 
 }
