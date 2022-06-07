@@ -47,6 +47,7 @@ public class StartData {
 		races.add(race2);
 
 		Tournament t = new Tournament("Torneo 1", races, false, garages);
+		
 		t.insertScoreTable();
 		Almacen.addTournament(t);
 		Almacen.addGarage(garage);

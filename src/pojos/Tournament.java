@@ -8,32 +8,29 @@ import java.util.Queue;
 
 import persistencia.Almacen;
 
-
-
 public class Tournament {
 
 	private String name;
 	private int drivenRaces;
 	private int numRaces = 10;
 	boolean onlyOneGarage;
-	private boolean started=false;
-	private boolean finished=true;
-	
-	private Queue<Race> races= new LinkedList<>();
-	private  ArrayList<Garage> garages = new ArrayList<Garage>();
-	private HashMap<Car, Integer> scoreTable = new HashMap<>();
-	private ArrayList<Car> winners = new ArrayList<>();
-	
-	
-	//BORRAR, SOLO PARA PRUEBAS
+	private boolean started = false;
+	private boolean finished = true;
+
+	private Queue<Race> races = new LinkedList<>();
+	private ArrayList<Garage> garages = new ArrayList<Garage>();
+	private HashMap<String, Integer> scoreTable = new HashMap<>();
+	private ArrayList<String> winners = new ArrayList<>();
+
+	// BORRAR, SOLO PARA PRUEBAS
 	public Tournament(String name, boolean onlyOneGarage, int numRaces) {
 		super();
 		this.name = name;
 		this.onlyOneGarage = onlyOneGarage;
 		this.numRaces = numRaces;
 	}
-
-
+	
+	
 
 	public Tournament(String name, Queue<Race> races, boolean onlyOneGarage) {
 		super();
@@ -63,7 +60,7 @@ public class Tournament {
 		if (!garages.isEmpty()) {
 			for (Garage garage : this.garages) {
 				for (Car car : garage.getCars()) {
-					scoreTable.put(car, 0);
+					scoreTable.put(car.getPiloto(), 0);
 				}
 			}
 		} else {
@@ -74,8 +71,8 @@ public class Tournament {
 	public void actualiceScoreTable(Race race) {
 		if (!scoreTable.isEmpty()) {
 			for (Map.Entry<Car, Integer> podiumPosition : race.podium.entrySet()) {
-				for (Map.Entry<Car, Integer> entry : scoreTable.entrySet()) {
-					if (podiumPosition.getKey().getPiloto() == entry.getKey().getPiloto()) {
+				for (Map.Entry<String, Integer> entry : scoreTable.entrySet()) {
+					if (podiumPosition.getKey().getPiloto().equalsIgnoreCase(entry.getKey())) {
 						if (podiumPosition.getValue() == 1) {
 							entry.setValue(entry.getValue() + 10);
 						} else if (podiumPosition.getValue() == 2) {
@@ -89,33 +86,31 @@ public class Tournament {
 		} else {
 			System.out.println("First you have to fill the score table");
 		}
-	}	
-	
-	
-	
+	}
+
 	public void setWinners() {
 		int maxScore = 0;
 		System.out.println("**********************************************");
-		
+
 		if (drivenRaces == numRaces) {
 			for (int valor : scoreTable.values()) {
 				if (valor > maxScore) {
 					maxScore = valor;
 				}
 			}
-			for (Map.Entry<Car, Integer> entry : scoreTable.entrySet()) {
+			for (Map.Entry<String, Integer> entry : scoreTable.entrySet()) {
 				if (entry.getValue() == maxScore) {
 					winners.add(entry.getKey());
 				}
 			}
-			finished=true;
+			finished = true;
 			Almacen.getTorneosActuales().remove(this);
 			System.out.println("EL TORNEO HA TERMINADO. GANADORES: ");
-			for (Car x : winners) {
+			for (String x : winners) {
 				System.out.println(x.toString());
 			}
 		} else {
-			System.out.println("Debes esperar al final del torneo para conocer el ganador");
+			System.out.println("Debes espesrar al final del torneo para conocer el ganador");
 		}
 	}
 
@@ -159,15 +154,15 @@ public class Tournament {
 		this.onlyOneGarage = onlyOneGarage;
 	}
 
-	public ArrayList<Car> getWinners() {
+	public ArrayList<String> getWinners() {
 		return winners;
 	}
 
-	public HashMap<Car, Integer> getScoreTable() {
+	public HashMap<String, Integer> getScoreTable() {
 		return scoreTable;
 	}
 
-	public void setScoreTable(HashMap<Car, Integer> scoreTable) {
+	public void setScoreTable(HashMap<String, Integer> scoreTable) {
 		this.scoreTable = scoreTable;
 	}
 
@@ -194,6 +189,7 @@ public class Tournament {
 	public void addGarage(Garage garage) {
 		garages.add(garage);
 	}
+
 	public boolean isStarted() {
 		return started;
 	}
@@ -209,6 +205,5 @@ public class Tournament {
 	public void setFinished(boolean finished) {
 		this.finished = finished;
 	}
-	
 
 }

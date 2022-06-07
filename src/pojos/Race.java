@@ -1,11 +1,12 @@
 package pojos;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public abstract class Race  implements Serializable {
+
+
+public class Race {
 
 	protected String raceName;
 
@@ -20,7 +21,7 @@ public abstract class Race  implements Serializable {
 	}
 
 	
-	public abstract void run();
+	public void run() {}
 
 	public void insertCars() {
 		if (this.tournament.onlyOneGarage) {

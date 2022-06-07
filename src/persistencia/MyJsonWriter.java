@@ -8,6 +8,10 @@ import java.nio.file.Paths;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import pojos.EliminationRace;
+import pojos.Race;
+import pojos.StandarRace;
+
 public class MyJsonWriter {
 
 	public static void writeAlmacenToJson() {
@@ -17,10 +21,23 @@ public class MyJsonWriter {
 
 	}
 
+	public static void writeRaces() {
+		RuntimeTypeAdapterFactory<Race> vehicleAdapterFactory = RuntimeTypeAdapterFactory.of(Race.class, "type")
+				.registerSubtype(StandarRace.class, "Standard").registerSubtype(EliminationRace.class, "Elimination");
+
+		Gson gsonRaces = new GsonBuilder().registerTypeAdapterFactory(vehicleAdapterFactory).create();
+		try (Writer writerRaces = Files.newBufferedWriter(Paths.get("Races.json"))) {
+			gsonRaces.toJson(Almacen.getRaces(), writerRaces);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 	public static void writeTournaments() {
 		Gson gsonTournaments = new GsonBuilder().setPrettyPrinting().create();
 		try (Writer writerTournaments = Files.newBufferedWriter(Paths.get("Tournaments.json"))) {
-			gsonTournaments.toJson(Almacen.getTorneos(), writerTournaments);
+			gsonTournaments.toJson(Almacen.getTorneosActuales(), writerTournaments);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

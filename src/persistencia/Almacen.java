@@ -1,10 +1,9 @@
 package persistencia;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
-import pojos.Car;
 import pojos.Garage;
+import pojos.Race;
 import pojos.Tournament;
 
 public class Almacen {
@@ -13,6 +12,17 @@ public class Almacen {
 	private static ArrayList<Tournament> tournaments = new ArrayList<>();
 	private static ArrayList<Tournament> actualTournaments = new ArrayList<>();
 	private static ArrayList<Garage> garages = new ArrayList<>();
+	private static ArrayList<Race> races = new ArrayList<>();
+
+	public static ArrayList<Race> getRaces() {
+		return races;
+	}
+
+
+	public static void setRaces(ArrayList<Race> races) {
+		Almacen.races = races;
+	}
+
 
 	public static ArrayList<Garage> getGarages() {
 		return garages;
@@ -58,5 +68,9 @@ public class Almacen {
 		actualTournaments.add(tournament);
 	}
 	
+
+	public static void addRace(Race race) {
+		races.add(race);
+	}
 
 }
