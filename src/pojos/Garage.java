@@ -8,12 +8,6 @@ public class Garage {
 	private String name;
 	private ArrayList<Car> cars = new ArrayList<>();
 
-	
-	//SOLO PRUEBAS, BORRAR
-	public Garage(String name) {
-		super();
-		this.name = name;
-	}
 
 	public Garage(String name, ArrayList<Car> cars) {
 		super();

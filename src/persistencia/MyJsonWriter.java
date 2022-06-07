@@ -11,6 +11,7 @@ import com.google.gson.GsonBuilder;
 import pojos.EliminationRace;
 import pojos.Race;
 import pojos.StandarRace;
+import pojos.Tournament;
 
 public class MyJsonWriter {
 
@@ -18,16 +19,39 @@ public class MyJsonWriter {
 		writeTournaments();
 		writeActualTournaments();
 		writeGarages();
+		saveRaces();
+		writeRaces();
+
+	}
+
+	public static void saveRaces() {
+		for (Tournament t : Almacen.getTorneos()) {
+			if (t.getRaces() != null) {
+
+				for (Race race : t.getRaces()) {
+					if (race instanceof StandarRace) {
+						Almacen.addStandardRace((StandarRace) race);
+					} else if (race instanceof EliminationRace) {
+						Almacen.addEliminationRace((EliminationRace) race);
+					}
+
+				}
+			}
+		}
 
 	}
 
 	public static void writeRaces() {
-		RuntimeTypeAdapterFactory<Race> vehicleAdapterFactory = RuntimeTypeAdapterFactory.of(Race.class, "type")
-				.registerSubtype(StandarRace.class, "Standard").registerSubtype(EliminationRace.class, "Elimination");
 
-		Gson gsonRaces = new GsonBuilder().registerTypeAdapterFactory(vehicleAdapterFactory).create();
-		try (Writer writerRaces = Files.newBufferedWriter(Paths.get("Races.json"))) {
-			gsonRaces.toJson(Almacen.getRaces(), writerRaces);
+		Gson gsonRaces = new GsonBuilder().setPrettyPrinting().create();
+		try (Writer writerRaces = Files.newBufferedWriter(Paths.get("StandardRaces.json"))) {
+			gsonRaces.toJson(Almacen.getStandardRaces(), writerRaces);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Gson gsonRaces2 = new GsonBuilder().setPrettyPrinting().create();
+		try (Writer writerRaces2 = Files.newBufferedWriter(Paths.get("EliminationRaces.json"))) {
+			gsonRaces2.toJson(Almacen.getEliminationRaces(), writerRaces2);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

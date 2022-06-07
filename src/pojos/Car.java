@@ -11,8 +11,8 @@ public class Car implements Comparable<Car> {
 	private String piloto;
 	private String brand;
 	private String model;
-	private final int MAX_SPEED = 120;
-	private final int MAX_SPEED_REVERSE = 20;
+	private int MAX_SPEED = 120;
+	private int MAX_SPEED_REVERSE = 20;
 	private String fuel;
 	private int speedometer = 0;
 	private int tachometer = 0;
@@ -23,10 +23,8 @@ public class Car implements Comparable<Car> {
 	private int totalDistance;
 	private int distance;
 
-	public Car(String piloto) {
-		this.piloto = piloto;
-	}
 
+	
 	public Car(String piloto, String brand, String model, String fuel) {
 		this.piloto = piloto;
 		this.brand = brand;

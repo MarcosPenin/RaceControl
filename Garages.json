@@ -4,8 +4,11 @@
     "cars": [
       {
         "piloto": "Piloto 1",
+        "brand": "c",
+        "model": "c",
         "MAX_SPEED": 120,
         "MAX_SPEED_REVERSE": 20,
+        "fuel": "c",
         "speedometer": 0,
         "tachometer": 0,
         "gear": "N",
@@ -16,8 +19,11 @@
       },
       {
         "piloto": "Piloto 2",
+        "brand": "c",
+        "model": "c",
         "MAX_SPEED": 120,
         "MAX_SPEED_REVERSE": 20,
+        "fuel": "c",
         "speedometer": 0,
         "tachometer": 0,
         "gear": "N",
@@ -28,8 +34,11 @@
       },
       {
         "piloto": "Piloto 3",
+        "brand": "c",
+        "model": "c",
         "MAX_SPEED": 120,
         "MAX_SPEED_REVERSE": 20,
+        "fuel": "c",
         "speedometer": 0,
         "tachometer": 0,
         "gear": "N",

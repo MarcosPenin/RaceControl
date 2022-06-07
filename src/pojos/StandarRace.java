@@ -19,6 +19,9 @@ public class StandarRace extends Race {
 	}
 
 	public void run() {
+		System.out.println("COMIENZA LA CARRERA "+ getRaceName().toUpperCase());
+		
+		
 		insertCars();
 		long raceTime = 0;
 		startCars();
@@ -65,11 +68,11 @@ public class StandarRace extends Race {
 		}
 		for (Car car : cars) {
 			if (car.getDistance() == distanceFirst) {
-				podium.put(car, 1);
+				podium.put(car.getPiloto(), 1);
 			} else if (car.getDistance() == distanceSecond) {
-				podium.put(car, 2);
+				podium.put(car.getPiloto(), 2);
 			} else if (car.getDistance() == distanceThird) {
-				podium.put(car, 3);
+				podium.put(car.getPiloto(), 3);
 			}
 		}
 

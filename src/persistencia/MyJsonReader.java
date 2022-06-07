@@ -7,6 +7,8 @@ import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,42 +26,49 @@ public class MyJsonReader {
 		readTournaments();
 		readActualTournaments();
 		readGarages();
+		readRaces();
+		synchronizeRaces();
+
 	}
-	
-	
+
 	public static void readRaces() {
-		Reader reader;		
-		RuntimeTypeAdapterFactory<Race> vehicleAdapterFactory = RuntimeTypeAdapterFactory.of(Race.class, "type")
-				.registerSubtype(StandarRace.class, "Standard").registerSubtype(EliminationRace.class, "Elimination");
-		
-		
+		Reader reader;
 		try {
-			reader = Files.newBufferedReader(Paths.get("Races.json"));
-			Gson gsonRaces = new GsonBuilder().registerTypeAdapterFactory(vehicleAdapterFactory).create();
-				
-		
-			Almacen.addRace(gsonRaces.fromJson(reader, Race.class));
+			reader = Files.newBufferedReader(Paths.get("StandardRaces.json"));
+			Gson gsonRaces = new Gson();
+
+			Type raceType = new TypeToken<ArrayList<StandarRace>>() {
+			}.getType();
+			Almacen.setStandardRaces(gsonRaces.fromJson(reader, raceType));
 		} catch (IOException e) {
 			e.printStackTrace();
-		}}
-	
+		}
+		Reader reader2;
+		try {
+			reader = Files.newBufferedReader(Paths.get("EliminationRaces.json"));
+			Gson gsonRaces = new Gson();
 
-		
+			Type raceType = new TypeToken<ArrayList<EliminationRace>>() {
+			}.getType();
+			Almacen.setEliminationRaces(gsonRaces.fromJson(reader, raceType));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 	public static void readTournaments() {
 		Reader reader;
 		try {
 			reader = Files.newBufferedReader(Paths.get("Tournaments.json"));
 			Gson gsonTournaments = new Gson();
-					
+
 			Type tournamentType = new TypeToken<ArrayList<Tournament>>() {
 			}.getType();
 			Almacen.setTournaments(gsonTournaments.fromJson(reader, tournamentType));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 
 	}
 
@@ -89,6 +98,27 @@ public class MyJsonReader {
 			e.printStackTrace();
 		}
 
+	}
+
+	public static void synchronizeRaces() {
+		Queue<Race> races = new LinkedList<>();
+		for (Tournament t : Almacen.getActualTournaments()) {
+			t.setRaces(races);
+
+			for (StandarRace race : Almacen.getStandardRaces()) {
+				if (race.getTournament().getName().equals(t.getName())) {
+					t.addRace(race);
+					race.setTournament(t);
+				}
+
+			}
+			for (EliminationRace race : Almacen.getEliminationRaces()) {
+				if (race.getTournament().getName().equals(t.getName())) {
+					t.addRace(race);
+					race.setTournament(t);
+				}
+			}
+		}
 	}
 
 }

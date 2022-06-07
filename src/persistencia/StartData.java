@@ -1,6 +1,7 @@
 package persistencia;
 
 import java.util.ArrayList;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -8,18 +9,19 @@ import pojos.Car;
 import pojos.EliminationRace;
 import pojos.Garage;
 import pojos.Race;
+import pojos.StandarRace;
 import pojos.Tournament;
 
 public class StartData {
 
 	public static void addData() {
-		Car car = new Car("Piloto 1");
-		Car car2 = new Car("Piloto 2");
-		Car car3 = new Car("Piloto 3");
+		Car car = new Car("Piloto 1","c","c","c");
+		Car car2 = new Car("Piloto 2","c","c","c");
+		Car car3 = new Car("Piloto 3","c","c","c");
 
-		Car car4 = new Car("Piloto 4");
-		Car car5 = new Car("Piloto 5");
-		Car car6 = new Car("Piloto 6");
+		Car car4 = new Car("Piloto 4","c","c","c");
+		Car car5 = new Car("Piloto 5","c","c","c");
+		Car car6 = new Car("Piloto 6","c","c","c");
 
 		ArrayList<Car> cars = new ArrayList<>();
 		cars.add(car);
@@ -38,8 +40,9 @@ public class StartData {
 		garages.add(garage);
 		garages.add(garage2);
 
-		EliminationRace race = new EliminationRace("Carrera 1");
+		StandarRace race = new StandarRace("Carrera 1");
 		EliminationRace race2 = new EliminationRace("Carrera 2");
+	
 
 		Queue<Race> races = new LinkedList<>();
 
@@ -47,6 +50,9 @@ public class StartData {
 		races.add(race2);
 
 		Tournament t = new Tournament("Torneo 1", races, false, garages);
+		
+		
+		
 		
 		t.insertScoreTable();
 		Almacen.addTournament(t);

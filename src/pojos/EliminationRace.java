@@ -32,10 +32,10 @@ public class EliminationRace extends Race {
 			Collections.sort(cars);
 			
 			if (cars.size() == 3) {
-				podium.put(cars.get(2), 3);
+				podium.put(cars.get(2).getPiloto(), 3);
 			}
 			if (cars.size() == 2) {
-				podium.put(cars.get(1), 2);
+				podium.put(cars.get(1).getPiloto(), 2);
 			}
 
 			if (cars.get(cars.size() - 1) == cars.get(cars.size() - 2)) {
@@ -53,7 +53,7 @@ public class EliminationRace extends Race {
 				e.printStackTrace();
 			}
 		}
-		podium.put(cars.get(0), 1);
+		podium.put(cars.get(0).getPiloto(), 1);
 		cars.get(0).brakeStop();
 		
 		System.out.println("CARRERA TERMINADA. PODIUM: ");

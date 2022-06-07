@@ -17,7 +17,7 @@ public class Tournament {
 	private boolean started = false;
 	private boolean finished = true;
 
-	private Queue<Race> races = new LinkedList<>();
+	private transient Queue<Race> races = new LinkedList<>();
 	private ArrayList<Garage> garages = new ArrayList<Garage>();
 	private HashMap<String, Integer> scoreTable = new HashMap<>();
 	private ArrayList<String> winners = new ArrayList<>();
@@ -70,9 +70,9 @@ public class Tournament {
 
 	public void actualiceScoreTable(Race race) {
 		if (!scoreTable.isEmpty()) {
-			for (Map.Entry<Car, Integer> podiumPosition : race.podium.entrySet()) {
+			for (Map.Entry<String, Integer> podiumPosition : race.podium.entrySet()) {
 				for (Map.Entry<String, Integer> entry : scoreTable.entrySet()) {
-					if (podiumPosition.getKey().getPiloto().equalsIgnoreCase(entry.getKey())) {
+					if (podiumPosition.getKey().equalsIgnoreCase(entry.getKey())) {
 						if (podiumPosition.getValue() == 1) {
 							entry.setValue(entry.getValue() + 10);
 						} else if (podiumPosition.getValue() == 2) {

@@ -11,8 +11,8 @@ public class Race {
 	protected String raceName;
 
 	protected ArrayList<Car> cars = new ArrayList<>();
-	protected HashMap<Car,Integer> podium = new HashMap<>();
-	protected transient Tournament tournament;
+	protected HashMap<String,Integer> podium = new HashMap<>();
+	protected Tournament tournament;
 	
 
 	public Race(String raceName) {
@@ -21,7 +21,7 @@ public class Race {
 	}
 
 	
-	public void run() {}
+	public  void run() {}
 
 	public void insertCars() {
 		if (this.tournament.onlyOneGarage) {
@@ -75,7 +75,7 @@ public class Race {
 		this.cars = car;
 	}
 
-	public HashMap<Car,Integer> getPodium() {
+	public HashMap<String,Integer> getPodium() {
 		return podium;
 	}
 

@@ -1,33 +1,22 @@
 [
   {
     "name": "Torneo 1",
-    "drivenRaces": 0,
+    "drivenRaces": 1,
     "numRaces": 2,
     "onlyOneGarage": false,
     "started": false,
     "finished": true,
-    "races": [
-      {
-        "WARM_UP_MINUTS": 5,
-        "raceName": "Carrera 1",
-        "cars": [],
-        "podium": {}
-      },
-      {
-        "WARM_UP_MINUTS": 5,
-        "raceName": "Carrera 2",
-        "cars": [],
-        "podium": {}
-      }
-    ],
     "garages": [
       {
         "name": "Garage 1",
         "cars": [
           {
             "piloto": "Piloto 1",
+            "brand": "c",
+            "model": "c",
             "MAX_SPEED": 120,
             "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
             "speedometer": 0,
             "tachometer": 0,
             "gear": "N",
@@ -38,8 +27,11 @@
           },
           {
             "piloto": "Piloto 2",
+            "brand": "c",
+            "model": "c",
             "MAX_SPEED": 120,
             "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
             "speedometer": 0,
             "tachometer": 0,
             "gear": "N",
@@ -50,8 +42,11 @@
           },
           {
             "piloto": "Piloto 3",
+            "brand": "c",
+            "model": "c",
             "MAX_SPEED": 120,
             "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
             "speedometer": 0,
             "tachometer": 0,
             "gear": "N",
@@ -67,8 +62,11 @@
         "cars": [
           {
             "piloto": "Piloto 4",
+            "brand": "c",
+            "model": "c",
             "MAX_SPEED": 120,
             "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
             "speedometer": 0,
             "tachometer": 0,
             "gear": "N",
@@ -79,8 +77,11 @@
           },
           {
             "piloto": "Piloto 5",
+            "brand": "c",
+            "model": "c",
             "MAX_SPEED": 120,
             "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
             "speedometer": 0,
             "tachometer": 0,
             "gear": "N",
@@ -91,8 +92,11 @@
           },
           {
             "piloto": "Piloto 6",
+            "brand": "c",
+            "model": "c",
             "MAX_SPEED": 120,
             "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
             "speedometer": 0,
             "tachometer": 0,
             "gear": "N",
@@ -106,11 +110,77 @@
     ],
     "scoreTable": {
       "Piloto 3": 0,
-      "Piloto 4": 0,
-      "Piloto 1": 0,
+      "Piloto 4": 10,
+      "Piloto 1": 5,
       "Piloto 2": 0,
       "Piloto 5": 0,
       "Piloto 6": 0
+    },
+    "winners": []
+  },
+  {
+    "name": "Torneo 2",
+    "drivenRaces": 1,
+    "numRaces": 2,
+    "onlyOneGarage": false,
+    "started": true,
+    "finished": true,
+    "garages": [
+      {
+        "name": "Garage 1",
+        "cars": [
+          {
+            "piloto": "Piloto 1",
+            "brand": "c",
+            "model": "c",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 1",
+            "totalDistance": 0,
+            "distance": 0
+          },
+          {
+            "piloto": "Piloto 2",
+            "brand": "c",
+            "model": "c",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 1",
+            "totalDistance": 0,
+            "distance": 0
+          },
+          {
+            "piloto": "Piloto 3",
+            "brand": "c",
+            "model": "c",
+            "MAX_SPEED": 120,
+            "MAX_SPEED_REVERSE": 20,
+            "fuel": "c",
+            "speedometer": 0,
+            "tachometer": 0,
+            "gear": "N",
+            "steeringWheelAngle": 0,
+            "garage": "Garage 1",
+            "totalDistance": 0,
+            "distance": 0
+          }
+        ]
+      }
+    ],
+    "scoreTable": {
+      "Piloto 3": 0,
+      "Piloto 1": 10,
+      "Piloto 2": 0
     },
     "winners": []
   }
