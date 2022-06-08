@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
-
-import persistencia.Almacen;
+import main.RaceControlApp;
 
 public class Tournament {
 
@@ -15,7 +14,7 @@ public class Tournament {
 	private int numRaces = 10;
 	boolean onlyOneGarage;
 
-	private transient Queue<Race> races = new LinkedList<>();
+	private Queue<Race> races = new LinkedList<>();
 	private ArrayList<Garage> garages = new ArrayList<Garage>();
 	private HashMap<String, Integer> scoreTable = new HashMap<>();
 	private ArrayList<String> winners = new ArrayList<>();
@@ -51,7 +50,6 @@ public class Tournament {
 	 *Crea una tabla de puntuaciones con todos los coches de todos los garages inscritos.
 	 *Se establece una puntuación de 0 para todos ellos
 	 * 
-	 * @return Nada
 	 */
 	
 	public void insertScoreTable() {
@@ -73,7 +71,6 @@ public class Tournament {
 	 * 
 	 * @param race
 	 * 		La carrera cuyo podio se añadirá a la clasificación general
-	 * @return Nada
 	 */
 	public void actualiceScoreTable(Race race) {
 		if (!scoreTable.isEmpty()) {
@@ -98,7 +95,6 @@ public class Tournament {
 	/**
 	 *Busca los coches con más puntos de la tabla de puntuaciones y los guarda como ganadores del torneo
 	 * 
-	 * @return Nada
 	 */
 
 	public void setWinners() {
@@ -116,7 +112,7 @@ public class Tournament {
 					winners.add(entry.getKey());
 				}
 			}
-			Almacen.getTorneosActuales().remove(this);
+			RaceControlApp.almacen.getActualTournaments().remove(this);
 			System.out.println("EL TORNEO HA TERMINADO. GANADORES: ");
 			for (String x : winners) {
 				System.out.println(x.toString());

@@ -12,7 +12,7 @@ public abstract class Race {
 
 	protected ArrayList<Car> cars = new ArrayList<>();
 	protected HashMap<String,Integer> podium = new HashMap<>();
-	protected Tournament tournament;
+	protected transient Tournament tournament;
 	
 
 	public Race(String raceName) {
@@ -24,10 +24,31 @@ public abstract class Race {
 	/**
 	 *Simula la celebración de una carrera. Desarrollado en las subclases
 	 * 
-	 * @return Nada
 	 */	
 	public abstract void run() ;
 
+	
+	public void driveAll() {
+		for (Car car : cars) {
+			car.drive();
+			car.setDistance(car.getDistance() + car.getSpeedometer());
+			System.out.println(car.getPiloto() + ":    " + car.getDistance());
+		}
+	}
+	
+	public void actualizeScore() {
+		System.out.println("CARRERA TERMINADA. PODIUM: ");
+		getPodium().forEach((i, j) -> System.out.println("Coche: " + i + ": Posición: " + j));
+	
+		tournament.actualiceScoreTable(this);
+		tournament.setDrivenRaces(tournament.getDrivenRaces() + 1);
+		if (tournament.getDrivenRaces() == tournament.getNumRaces()) {
+			tournament.setWinners();
+		}
+		
+	}
+	
+	
 	
 	/**
 	 *Accede al torneo asociado a esta carrera. Si es un torneo de un solo garage añade todos sus coches
@@ -44,7 +65,7 @@ public abstract class Race {
 			Random random = new Random();
 			for (Garage garage : tournament.getGarages()) {
 				int max = garage.getCars().size();
-				int position = random.nextInt(max-1) ;
+				int position = random.nextInt(max) ;
 				this.cars.add(garage.getCars().get(position));
 			}
 		}
@@ -53,7 +74,6 @@ public abstract class Race {
 	/**
 	 *Enciende todos los coches que participan en la carrera
 	 * 
-	 * @return Nada
 	 */
 	
 	public void startCars() {

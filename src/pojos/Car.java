@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Car implements Comparable<Car> {
 
-	public static enum Gear {
+	public enum Gear {
 		N, D, R
-	};
+	}
 
 	private String piloto;
 	private String brand;
@@ -35,8 +35,10 @@ public class Car implements Comparable<Car> {
 	 * Enciende el coche, cambiando su marcha y poniendo la velocidad a 0 y el
 	 * cuentarevoluciones en 1000. Si ya está encendido avisa al usuario. 
 	 * 
-	 * @return Nada
 	 */
+	
+	
+	
 	public void start() {
 		if (this.tachometer == 0) {
 			this.tachometer = 1000;
@@ -50,7 +52,6 @@ public class Car implements Comparable<Car> {
 	/**
 	 *Apaga el coche, siempre y cuando su velocidad y su cuentarevoluciones estén en 0
 	 * 
-	 * @return Nada
 	 */
 	public void stop() {
 		if (this.speedometer == 0) {
@@ -67,9 +68,8 @@ public class Car implements Comparable<Car> {
 	/**
 	 *Frena el coche un valor aleatorio entre 10 y20 km. El coche no puede bajar de 0
 	 * 
-	 * @return Nada
 	 */
-	public void brake() {
+	public void brake() {	
 		Random random = new Random();
 		int frenazo = (random.nextInt(21 - 10) + 10);
 		this.speedometer -= frenazo;
@@ -85,7 +85,6 @@ public class Car implements Comparable<Car> {
 	 *Frena del todo el coche, poniendo su velocidad a 0. Si el coche iba muy rápido dará una 
 	 *o varias vueltas de campana
 	 * 
-	 * @return Nada
 	 */
 	
 	public void handBrake() {
@@ -105,7 +104,6 @@ public class Car implements Comparable<Car> {
 	/**
 	 *Frena progresivamente el coche y lo apaga
 	 * 
-	 * @return Nada
 	 */
 	
 	public void brakeStop() {
@@ -120,7 +118,6 @@ public class Car implements Comparable<Car> {
 	 *Modifica la velocidad del vehículo. Hay un 75% de posibilidades de que acelere
 	 *y un 25%de que frene. En cada caso, llama al método correspondiente.
 	 * 
-	 * @return Nada
 	 */
 	
 	public void drive() {
@@ -137,13 +134,11 @@ public class Car implements Comparable<Car> {
 	 *Acelera el coche un valor aleatorio  entre 10 y 50 si el coche va hacia adelante. 
 	 *Si está marcha atrás acelera un valor aleatorio entre 3 y 10
 	 * 
-	 * @return Nada
 	 */
 
 	public void accelerate() {
-		Random random = new Random();
 		int aceleron;
-
+		Random random = new Random();
 		switch (gear) {
 		case D:
 			aceleron = ((random.nextInt(5 - 1) + 1) * 10);
@@ -176,7 +171,6 @@ public class Car implements Comparable<Car> {
 	/**
 	 *Cambia la dirección del coche
 	 * 
-	 * @return Nada
 	 */
 	
 
@@ -205,7 +199,6 @@ public class Car implements Comparable<Car> {
 	 * 		Los ángulos que queremos girar la rueda
 	 * @param derecha
 	 * 		La dirección en la que queremos girar. Si es True gira a la derecha, si es False a la izquierda
-	 * @return Nada
 	 */
 	
 	public void turnSteeringWheel(int angle, boolean derecha) {

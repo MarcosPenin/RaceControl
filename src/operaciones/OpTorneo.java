@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Queue;
 import java.util.Scanner;
 
-import persistencia.Almacen;
+import main.RaceControlApp;
 import pojos.Garage;
 import pojos.Race;
 import pojos.Tournament;
@@ -14,27 +14,30 @@ import vista.UserData;
 public class OpTorneo {
 	static Scanner sc = new Scanner(System.in);
 
-	
 	/**
 	 * Selecciona un torneo entre los que se están celebrando actualmente
 	 */
 	public static void chooseTournament() {
 		boolean flag = false;
 
-		if (Almacen.getTorneosActuales().isEmpty()) {
+		if (RaceControlApp.almacen.getActualTournaments().isEmpty()) {
 			System.out.println("Primero debes iniciar un torneo");
 		} else {
+			int i, op;
 
-			System.out.println("Selecciona un torneo:");
+			do {
+				System.out.println("Selecciona un torneo:");
 
-			int i = 0;
-			for (Tournament t : Almacen.getTorneosActuales()) {
-				i++;
-				System.out.println(i + ": " + t.getName());
-			}
+				i = 0;
+				for (Tournament t : RaceControlApp.almacen.getActualTournaments()) {
+					i++;
+					System.out.println(i + ": " + t.getName());
+				}
 
-			int op = ControlData.lerPositiveInt(sc);
-			Tournament t = Almacen.getTorneosActuales().get(op - 1);
+				op = ControlData.lerPositiveInt(sc);
+
+			} while (op > i);
+			Tournament t = RaceControlApp.almacen.getActualTournaments().get(op - 1);
 
 			if (!t.getGarages().isEmpty()) {
 				startRace(t);
@@ -48,12 +51,10 @@ public class OpTorneo {
 		}
 	}
 
-	
 	/**
 	 * Comienza una carrera
 	 * 
-	 * @param t
-	 * 		El torneo donde se celebrará la carrera
+	 * @param t El torneo donde se celebrará la carrera
 	 */
 	public static void startRace(Tournament t) {
 		Race race = t.getRaces().poll();
@@ -64,7 +65,6 @@ public class OpTorneo {
 		}
 	}
 
-	
 	/**
 	 * Crea un torneo nuevo con sus carreras. Se puede introducir ahora los garages
 	 * o dejarlo para más tarde
@@ -83,29 +83,29 @@ public class OpTorneo {
 			tournament.insertScoreTable();
 		}
 
-		Almacen.addTournament(tournament);
+		RaceControlApp.almacen.addTournament(tournament);
 
 	}
 
 	/**
-	 * Muestra el listado de torneos actuales o el histórico de torneos 
+	 * Muestra el listado de torneos actuales o el histórico de torneos
 	 */
 	public static void printTournaments() {
 		boolean onlyActualTournaments = UserData.seeActualOrAllTournaments();
 
 		if (onlyActualTournaments) {
-			if (Almacen.getTorneosActuales().isEmpty()) {
+			if (RaceControlApp.almacen.getActualTournaments().isEmpty()) {
 				System.out.println("No se está disputando ningún torneo");
 			} else {
-				for (Tournament t : Almacen.getTorneosActuales()) {
+				for (Tournament t : RaceControlApp.almacen.getTournaments()) {
 					System.out.println(t.getName());
 				}
 			}
 		} else {
-			if (Almacen.getTorneos().isEmpty()) {
+			if (RaceControlApp.almacen.getTournaments().isEmpty()) {
 				System.out.println("Todavía no se ha registrado ningún torneo");
 			} else {
-				for (Tournament t : Almacen.getTorneosActuales()) {
+				for (Tournament t : RaceControlApp.almacen.getActualTournaments()) {
 					System.out.println(t.getName());
 				}
 			}

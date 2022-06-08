@@ -1,6 +1,5 @@
 package pojos;
 
-import java.util.ArrayList;
 import java.util.Collections;
 
 public class EliminationRace extends Race {
@@ -27,25 +26,17 @@ public class EliminationRace extends Race {
 	 *
 	 *Si es la última carrera del torneo establece los ganadores. 
 	 * 
-	 * @return Nada
 	 */
 	public void run() {
+		System.out.println("COMIENZA LA CARRERA "+ getRaceName().toUpperCase());
+		
 		insertCars();
 		startCars();
-
 		for (int i = 0; i < WARM_UP_MINUTS; i++) {
-			for (Car car : cars) {
-				car.drive();
-				car.setDistance(car.getDistance() + car.getSpeedometer());
-				System.out.println(car.getPiloto() + ":    " + car.getDistance());
-			}
+			driveAll();
 		}
 		while (cars.size() > 1) {
-			for (Car car : cars) {
-				car.drive();
-				car.setDistance(car.getDistance() + car.getSpeedometer());
-				System.out.println(car.getPiloto() + ":    " + car.getDistance());
-			}
+			driveAll();
 			Collections.sort(cars);
 			
 			if (cars.size() == 3) {
@@ -73,14 +64,8 @@ public class EliminationRace extends Race {
 		podium.put(cars.get(0).getPiloto(), 1);
 		cars.get(0).brakeStop();
 		
-		System.out.println("CARRERA TERMINADA. PODIUM: ");
-		getPodium().forEach((i, j) -> System.out.println("Coche: " + i + ": Posición: " + j));
-
-
-		tournament.actualiceScoreTable(this);
-		tournament.setDrivenRaces(tournament.getDrivenRaces() + 1);
-		if (tournament.getDrivenRaces() == tournament.getNumRaces()) {
-			tournament.setWinners();
-		}
+		actualizeScore();
+		
+		
 	}
 }

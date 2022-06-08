@@ -1,0 +1,310 @@
+{
+  "tournaments": [
+    {
+      "name": "Mundial de Fórmula 1",
+      "drivenRaces": 0,
+      "numRaces": 7,
+      "onlyOneGarage": false,
+      "races": [
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 3,
+            "raceName": "GP de Canadá",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 2,
+            "raceName": "GP de España",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP de Mónaco",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 5,
+            "raceName": "GP de EEUU",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP de Abu Dabi",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 3,
+            "raceName": "GP de Japón",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 6,
+            "raceName": "GP de Australia",
+            "cars": [],
+            "podium": {}
+          }
+        }
+      ],
+      "garages": [
+        {
+          "name": "Mercedes",
+          "cars": []
+        },
+        {
+          "name": "Alpine",
+          "cars": []
+        },
+        {
+          "name": "McLaren",
+          "cars": []
+        },
+        {
+          "name": "Alfa Romeo",
+          "cars": []
+        },
+        {
+          "name": "Red Bull",
+          "cars": []
+        },
+        {
+          "name": "Aston Martin",
+          "cars": []
+        },
+        {
+          "name": "Ferrari",
+          "cars": []
+        }
+      ],
+      "scoreTable": {},
+      "winners": []
+    },
+    {
+      "name": "Torneo Alpine",
+      "drivenRaces": 0,
+      "numRaces": 2,
+      "onlyOneGarage": true,
+      "races": [
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "Eliminación Alpine",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 3,
+            "raceName": "Final Alpine",
+            "cars": [],
+            "podium": {}
+          }
+        }
+      ],
+      "garages": [
+        {
+          "name": "Alpine",
+          "cars": []
+        }
+      ],
+      "scoreTable": {},
+      "winners": []
+    }
+  ],
+  "actualTournaments": [
+    {
+      "name": "Mundial de Fórmula 1",
+      "drivenRaces": 0,
+      "numRaces": 7,
+      "onlyOneGarage": false,
+      "races": [
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 3,
+            "raceName": "GP de Canadá",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 2,
+            "raceName": "GP de España",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP de Mónaco",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 5,
+            "raceName": "GP de EEUU",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP de Abu Dabi",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 3,
+            "raceName": "GP de Japón",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 6,
+            "raceName": "GP de Australia",
+            "cars": [],
+            "podium": {}
+          }
+        }
+      ],
+      "garages": [
+        {
+          "name": "Mercedes",
+          "cars": []
+        },
+        {
+          "name": "Alpine",
+          "cars": []
+        },
+        {
+          "name": "McLaren",
+          "cars": []
+        },
+        {
+          "name": "Alfa Romeo",
+          "cars": []
+        },
+        {
+          "name": "Red Bull",
+          "cars": []
+        },
+        {
+          "name": "Aston Martin",
+          "cars": []
+        },
+        {
+          "name": "Ferrari",
+          "cars": []
+        }
+      ],
+      "scoreTable": {},
+      "winners": []
+    },
+    {
+      "name": "Torneo Alpine",
+      "drivenRaces": 0,
+      "numRaces": 2,
+      "onlyOneGarage": true,
+      "races": [
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "Eliminación Alpine",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 3,
+            "raceName": "Final Alpine",
+            "cars": [],
+            "podium": {}
+          }
+        }
+      ],
+      "garages": [
+        {
+          "name": "Alpine",
+          "cars": []
+        }
+      ],
+      "scoreTable": {},
+      "winners": []
+    }
+  ],
+  "garages": [
+    {
+      "name": "Mercedes",
+      "cars": []
+    },
+    {
+      "name": "Alpine",
+      "cars": []
+    },
+    {
+      "name": "McLaren",
+      "cars": []
+    },
+    {
+      "name": "Alfa Romeo",
+      "cars": []
+    },
+    {
+      "name": "Red Bull",
+      "cars": []
+    },
+    {
+      "name": "Aston Martin",
+      "cars": []
+    },
+    {
+      "name": "Ferrari",
+      "cars": []
+    }
+  ]
+}

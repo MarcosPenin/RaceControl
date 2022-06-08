@@ -1,8 +1,6 @@
 package pojos;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Map;
 
 public class StandarRace extends Race {
 
@@ -32,16 +30,12 @@ public class StandarRace extends Race {
 	public void run() {
 		System.out.println("COMIENZA LA CARRERA "+ getRaceName().toUpperCase());
 		
-		
-		insertCars();
 		long raceTime = 0;
+		insertCars();
+	
 		startCars();
 		while (raceTime < horas) {
-			for (Car car : cars) {
-				car.drive();
-				car.setDistance(car.getDistance() + car.getSpeedometer());
-				System.out.println(car.getPiloto() + ":    " + car.getDistance());
-			}
+			driveAll();
 			raceTime += 1;
 			try {
 				// Thread.sleep(60000); UN MINUTO EN LA VERSION FINAL
@@ -50,20 +44,13 @@ public class StandarRace extends Race {
 				e.printStackTrace();
 			}
 		}
+		
+		
 		Collections.sort(cars);
 		setPodium();
 		brakeStopAll();
 		
-		System.out.println("CARRERA TERMINADA. PODIUM: ");
-		getPodium().forEach((i, j) -> System.out.println("Coche: " + i + ": Posición: " + j));
-
-		
-
-		tournament.actualiceScoreTable(this);
-		tournament.setDrivenRaces(tournament.getDrivenRaces() + 1);
-		if (tournament.getDrivenRaces() == tournament.getNumRaces()) {
-			tournament.setWinners();
-		}
+		actualizeScore();
 	}
 
 	

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import main.RaceControlApp;
 import pojos.Car;
 import pojos.EliminationRace;
 import pojos.Garage;
@@ -15,6 +16,8 @@ import pojos.Tournament;
 public class StartData {
 
 	public static void addData() {
+		
+		
 		Car car = new Car("Piloto 1","c","c","c");
 		Car car2 = new Car("Piloto 2","c","c","c");
 		Car car3 = new Car("Piloto 3","c","c","c");
@@ -50,13 +53,10 @@ public class StartData {
 		races.add(race2);
 
 		Tournament t = new Tournament("Torneo 1", races, false, garages);
-		
-		
-		
-		
+
 		t.insertScoreTable();
-		Almacen.addTournament(t);
-		Almacen.addGarage(garage);
+		RaceControlApp.almacen.addTournament(t);
+		RaceControlApp.almacen.addGarage(garage);
 	}
 
 }
