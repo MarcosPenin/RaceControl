@@ -1,6 +1,7 @@
 package main;
 
 import persistencia.*;
+
 import vista.MenuRaceControl;
 
 /**
@@ -18,7 +19,13 @@ public class RaceControlApp {
 
 		//StartData.addData();
 		MyJsonReader.readAlmacenJson();
+		
 		MenuRaceControl.menuPrincipal();
-		MyJsonWriter.writeAlmacenToJson();
+		
+	
+		//MyJsonWriter.writeAlmacenToJson();
+		
+		}
+		
+		
 	}
-}

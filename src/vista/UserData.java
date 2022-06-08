@@ -269,6 +269,7 @@ public class UserData {
 		System.out.println("Tienes que añadir al menos un coche");
 		do {
 			nextCar = addCar();
+			cars.add(nextCar);
 			System.out.println("¿Quieres añadir otro coche?");
 			another = requestYesNo();
 		} while (another);

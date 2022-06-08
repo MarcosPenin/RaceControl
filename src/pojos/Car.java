@@ -42,7 +42,6 @@ public class Car implements Comparable<Car> {
 	public void start() {
 		if (this.tachometer == 0) {
 			this.tachometer = 1000;
-			System.out.println("Vehiculo acendido");
 			this.gear = Gear.D;
 		} else {
 			System.out.println("O vehiculo xa esta acendido");
@@ -57,7 +56,6 @@ public class Car implements Comparable<Car> {
 		if (this.speedometer == 0) {
 			this.tachometer = 0;
 			this.gear = Gear.N;
-			System.out.println("Vehiculo apagado");
 
 		} else {
 			System.out.println("Non se pode apagar o vehiculo, primero ten que estar detido");
