@@ -17,14 +17,10 @@ public class RaceControlApp {
 
 	public static void main(String[] args) {
 
-		//StartData.addData();
 		MyJsonReader.readAlmacenJson();
-		
 		MenuRaceControl.menuPrincipal();
-		
-	
 		//MyJsonWriter.writeAlmacenToJson();
-		
+	
 		}
 		
 		

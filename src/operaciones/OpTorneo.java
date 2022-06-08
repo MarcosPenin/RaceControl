@@ -93,7 +93,7 @@ public class OpTorneo {
 	public static void printTournaments() {
 		boolean onlyActualTournaments = UserData.seeActualOrAllTournaments();
 
-		if (onlyActualTournaments) {
+		if (!onlyActualTournaments) {
 			if (RaceControlApp.almacen.getActualTournaments().isEmpty()) {
 				System.out.println("No se está disputando ningún torneo");
 			} else {

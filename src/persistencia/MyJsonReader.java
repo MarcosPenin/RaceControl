@@ -39,8 +39,22 @@ public class MyJsonReader {
 				for(Race r: t.getRaces()) {
 					r.setTournament(t);
 				}
+				for(Tournament at:RaceControlApp.almacen.getActualTournaments()) {
+					if (t.getName().equals(at.getName())) {
+						at=t;
+					}
+				}
+			for(Garage g: t.getGarages()) {
+				for(Garage ge: RaceControlApp.almacen.getGarages()) {
+					if (g.getName().equals(ge.getName())) {
+						g=ge;
+					}
+				}
+			
+			}
+			
 		}
-		
+					
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

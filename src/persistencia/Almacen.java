@@ -18,7 +18,6 @@ import pojos.Tournament;
 public class Almacen {
 
 	
-	
 	private ArrayList<Tournament> tournaments = new ArrayList<>();
 	private ArrayList<Tournament> actualTournaments = new ArrayList<>();
 	private ArrayList<Garage> garages = new ArrayList<>();
