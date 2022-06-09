@@ -7,6 +7,7 @@ import java.util.Scanner;
 import main.RaceControlApp;
 import pojos.Garage;
 import pojos.Race;
+import pojos.StandarRace;
 import pojos.Tournament;
 import utilidades.ControlData;
 import vista.UserData;
@@ -42,6 +43,7 @@ public class OpTorneo {
 			if (!t.getGarages().isEmpty()) {
 				startRace(t);
 				flag = true;
+				return;
 
 			} else {
 				System.out.println("El torneo no empezará hasta que se inscriban los garages");
@@ -61,7 +63,8 @@ public class OpTorneo {
 		if (race == null) {
 			System.out.println("No quedan carreras en este torneo, debería haber terminado");
 		} else {
-			race.run();
+			Thread h1 = new Thread(race);
+			h1.start();
 		}
 	}
 

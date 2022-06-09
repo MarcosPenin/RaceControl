@@ -113,12 +113,12 @@ public class Tournament {
 				}
 			}
 			RaceControlApp.almacen.getActualTournaments().remove(this);
-			System.out.println("EL TORNEO HA TERMINADO. GANADORES: ");
+			System.err.println("EL TORNEO "+getName().toUpperCase()+ " HA TERMINADO. GANADORES: ");
 			for (String x : winners) {
-				System.out.println(x.toString());
+				System.err.println(x.toString());
 			}
 		} else {
-			System.out.println("Debes espesrar al final del torneo para conocer el ganador");
+			System.out.println("Debes esperar al final del torneo para conocer el ganador");
 		}
 	}
 

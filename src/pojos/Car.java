@@ -33,12 +33,19 @@ public class Car implements Comparable<Car> {
 
 	/**
 	 * Enciende el coche, cambiando su marcha y poniendo la velocidad a 0 y el
-	 * cuentarevoluciones en 1000. Si ya está encendido avisa al usuario. 
+	 * cuentarevoluciones en 1000. Si ya está encendido avisa al usuario.
 	 * 
 	 */
-	
-	
-	
+
+	@Override
+	public Car clone() {
+		try {
+			return (Car) super.clone();
+		} catch (CloneNotSupportedException e) {
+			return new Car(piloto, brand, model, fuel);
+		}
+	}
+
 	public void start() {
 		if (this.tachometer == 0) {
 			this.tachometer = 1000;
@@ -49,7 +56,8 @@ public class Car implements Comparable<Car> {
 	}
 
 	/**
-	 *Apaga el coche, siempre y cuando su velocidad y su cuentarevoluciones estén en 0
+	 * Apaga el coche, siempre y cuando su velocidad y su cuentarevoluciones estén
+	 * en 0
 	 * 
 	 */
 	public void stop() {
@@ -62,12 +70,12 @@ public class Car implements Comparable<Car> {
 		}
 	}
 
-	
 	/**
-	 *Frena el coche un valor aleatorio entre 10 y20 km. El coche no puede bajar de 0
+	 * Frena el coche un valor aleatorio entre 10 y20 km. El coche no puede bajar de
+	 * 0
 	 * 
 	 */
-	public void brake() {	
+	public void brake() {
 		Random random = new Random();
 		int frenazo = (random.nextInt(21 - 10) + 10);
 		this.speedometer -= frenazo;
@@ -80,11 +88,11 @@ public class Car implements Comparable<Car> {
 	}
 
 	/**
-	 *Frena del todo el coche, poniendo su velocidad a 0. Si el coche iba muy rápido dará una 
-	 *o varias vueltas de campana
+	 * Frena del todo el coche, poniendo su velocidad a 0. Si el coche iba muy
+	 * rápido dará una o varias vueltas de campana
 	 * 
 	 */
-	
+
 	public void handBrake() {
 		if (this.speedometer > 50) {
 			System.out.println("VUELTA DE CAMPANA");
@@ -98,12 +106,12 @@ public class Car implements Comparable<Car> {
 		this.speedometer = 0;
 		this.tachometer = 1000;
 	}
-	
+
 	/**
-	 *Frena progresivamente el coche y lo apaga
+	 * Frena progresivamente el coche y lo apaga
 	 * 
 	 */
-	
+
 	public void brakeStop() {
 		for (int i = 0; i < 20; i++) {
 			brake();
@@ -113,11 +121,11 @@ public class Car implements Comparable<Car> {
 	}
 
 	/**
-	 *Modifica la velocidad del vehículo. Hay un 75% de posibilidades de que acelere
-	 *y un 25%de que frene. En cada caso, llama al método correspondiente.
+	 * Modifica la velocidad del vehículo. Hay un 75% de posibilidades de que
+	 * acelere y un 25%de que frene. En cada caso, llama al método correspondiente.
 	 * 
 	 */
-	
+
 	public void drive() {
 		Random random = new Random();
 		int val = random.nextInt(4) + 1;
@@ -127,10 +135,10 @@ public class Car implements Comparable<Car> {
 			accelerate();
 		}
 	}
-	
+
 	/**
-	 *Acelera el coche un valor aleatorio  entre 10 y 50 si el coche va hacia adelante. 
-	 *Si está marcha atrás acelera un valor aleatorio entre 3 y 10
+	 * Acelera el coche un valor aleatorio entre 10 y 50 si el coche va hacia
+	 * adelante. Si está marcha atrás acelera un valor aleatorio entre 3 y 10
 	 * 
 	 */
 
@@ -167,10 +175,9 @@ public class Car implements Comparable<Car> {
 	}
 
 	/**
-	 *Cambia la dirección del coche
+	 * Cambia la dirección del coche
 	 * 
 	 */
-	
 
 	public void reverse() {
 		if (this.speedometer == 0) {
@@ -191,14 +198,13 @@ public class Car implements Comparable<Car> {
 	}
 
 	/**
-	 *Gira el coche 
+	 * Gira el coche
 	 * 
-	 * @param angle
-	 * 		Los ángulos que queremos girar la rueda
-	 * @param derecha
-	 * 		La dirección en la que queremos girar. Si es True gira a la derecha, si es False a la izquierda
+	 * @param angle   Los ángulos que queremos girar la rueda
+	 * @param derecha La dirección en la que queremos girar. Si es True gira a la
+	 *                derecha, si es False a la izquierda
 	 */
-	
+
 	public void turnSteeringWheel(int angle, boolean derecha) {
 		if (derecha) {
 			this.steeringWheelAngle += angle;
@@ -215,11 +221,11 @@ public class Car implements Comparable<Car> {
 	}
 
 	/**
-	 *Devuelve el ángulo de las ruedas
+	 * Devuelve el ángulo de las ruedas
 	 * 
 	 * @return El ángulo de las ruedas
 	 */
-	
+
 	public String showSteeringWheelDetail() {
 		if (this.steeringWheelAngle > 0) {
 			return "El ángulo de las ruedas es de " + steeringWheelAngle + " grados a la derecha";
@@ -236,13 +242,13 @@ public class Car implements Comparable<Car> {
 	}
 
 	/**
-	 *Establece la base para comparar dos instancias de la clase en la variable distancia
+	 * Establece la base para comparar dos instancias de la clase en la variable
+	 * distancia
 	 * 
-	 * @param c
-	 * 		El coche con el que queremos compararlo
+	 * @param c El coche con el que queremos compararlo
 	 * @return boolean
 	 */
-	
+
 	@Override
 	public int compareTo(Car c) {
 		if (this.distance > c.distance) {
