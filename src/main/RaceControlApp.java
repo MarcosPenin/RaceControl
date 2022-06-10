@@ -33,7 +33,7 @@ public class RaceControlApp {
 		MenuRaceControl.menuPrincipal();
 		//MyJsonWriter.writeAlmacenToJson();
 		
-		}
+		System.exit(0);
 		
 		
-	}
+	}}

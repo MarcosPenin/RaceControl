@@ -25,5 +25,9 @@ public class UIRaces {
 		frame.pack();
 		frame.setVisible(true);
 		frame.setSize(800, 600);
+		
+		
 	}
+
+	
 }
