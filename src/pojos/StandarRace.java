@@ -1,19 +1,13 @@
 package pojos;
 
-import java.awt.BorderLayout;
-import java.io.PrintStream;
 import java.util.Collections;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
-import vista.TextAreaOutputStream;
+import operaciones.CarDisponibility;
 
 public class StandarRace extends Race {
 
 	private long horas = 3 * 60;
+	
 
 	public StandarRace(String raceName) {
 		super(raceName);
@@ -36,14 +30,15 @@ public class StandarRace extends Race {
 	 * @return Nada
 	 */
 	public void run() {
-		
+
+		CarDisponibility.carDisponibility.checkDisponibility(cars,raceName);
+		CarDisponibility.carDisponibility.blockCars(cars);
 		
 
 		System.err.println("***********************************************");
 		System.err.println("COMIENZA LA CARRERA " + getRaceName().toUpperCase());
 
 		long raceTime = 0;
-		insertCars();
 
 		startCars();
 		while (raceTime < horas) {
@@ -52,8 +47,8 @@ public class StandarRace extends Race {
 			driveAll();
 			raceTime += 1;
 			try {
-				Thread.sleep(6000);
-				// Thread.sleep(60);
+				//Thread.sleep(6000);
+				 Thread.sleep(6000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -64,6 +59,9 @@ public class StandarRace extends Race {
 		brakeStopAll();
 
 		actualizeScore();
+		CarDisponibility.carDisponibility.liberateCars(cars);
+
+	
 	}
 
 	/**
@@ -94,7 +92,6 @@ public class StandarRace extends Race {
 				podium.put(car.getPiloto(), 3);
 			}
 		}
-
 	}
 
 	public long getHoras() {

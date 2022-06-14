@@ -22,6 +22,15 @@ public class Car implements Comparable<Car> {
 	private String garage;
 	private int totalDistance;
 	private int distance;
+	private boolean running=false;
+
+	public boolean isRunning() {
+		return running;
+	}
+
+	public void setRunning(boolean running) {
+		this.running = running;
+	}
 
 	public Car(String piloto, String brand, String model, String fuel) {
 		this.piloto = piloto;

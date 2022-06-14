@@ -72,6 +72,7 @@ public class OpGarage {
 			} while (op > i);
 			Car car = UserData.addCar();
 			RaceControlApp.almacen.getGarages().get(op - 1).addCar(car);
+			CarDisponibility.carDisponibility.addCar(car);
 			System.out.println("Se ha añadido el coche del piloto " + car.getPiloto() + " al garage "
 					+ RaceControlApp.almacen.getGarages().get(op - 1).getName());
 

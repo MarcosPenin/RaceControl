@@ -12,19 +12,23 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import main.RaceControlApp;
+import operaciones.CarDisponibility;
+import pojos.Car;
 import pojos.Garage;
 import pojos.Race;
 import pojos.Tournament;
 
 /**
- * Clase para recuperar los diferentes datos que usa el programa desde ficheros JSON
+ * Clase para recuperar los diferentes datos que usa el programa desde ficheros
+ * JSON
  */
 
 public class MyJsonReader {
 
-/**
- * Recupera todos los objetos guardados y sincroniza las carreras con sus torneos
- */
+	/**
+	 * Recupera todos los objetos guardados y sincroniza las carreras con sus
+	 * torneos
+	 */
 	public static void readAlmacenJson() {
 		Reader reader;
 		try {
@@ -33,44 +37,42 @@ public class MyJsonReader {
 			gsonBuilder.registerTypeAdapter(Race.class, new InterfaceAdapter<Race>());
 			gsonBuilder.setPrettyPrinting();
 			Gson gson = gsonBuilder.create();
-		
-			RaceControlApp.almacen=gson.fromJson(reader, Almacen.class);
-			for(Tournament t:RaceControlApp.almacen.getActualTournaments()) {
-				for(Race r: t.getRaces()) {
+
+			RaceControlApp.almacen = gson.fromJson(reader, Almacen.class);
+			for (Tournament t : RaceControlApp.almacen.getActualTournaments()) {
+				for (Race r : t.getRaces()) {
 					r.setTournament(t);
 				}
-				for(Tournament at:RaceControlApp.almacen.getActualTournaments()) {
+				for (Tournament at : RaceControlApp.almacen.getActualTournaments()) {
 					if (t.getName().equals(at.getName())) {
-						at=t;
+						at = t;
 					}
 				}
-			for(Garage g: t.getGarages()) {
-				for(Garage ge: RaceControlApp.almacen.getGarages()) {
-					if (g.getName().equals(ge.getName())) {
-						g=ge;
+				for (Garage g : t.getGarages()) {
+					for (Garage ge : RaceControlApp.almacen.getGarages()) {
+						if (g.getName().equals(ge.getName())) {
+							g = ge;
+						}
 					}
+
 				}
-			
+
 			}
-			
-		}
-					
+			for (Garage g : RaceControlApp.almacen.getGarages()) {
+				for (Car c : g.getCars()) {
+					CarDisponibility.carDisponibility.addCar(c);
+				}
+			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
-	
-	
-	
-	
 
-	
-
-/**
- * Recupera los torneos guardados
- */
+	/**
+	 * Recupera los torneos guardados
+	 */
 	public static void readTournaments() {
 		Reader reader;
 		try {
@@ -119,6 +121,5 @@ public class MyJsonReader {
 		}
 
 	}
-
 
 }

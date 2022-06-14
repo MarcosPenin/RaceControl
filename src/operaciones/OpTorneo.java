@@ -19,7 +19,6 @@ public class OpTorneo {
 	 * Selecciona un torneo entre los que se están celebrando actualmente
 	 */
 	public static void chooseTournament() {
-		boolean flag = false;
 
 		if (RaceControlApp.almacen.getActualTournaments().isEmpty()) {
 			System.out.println("Primero debes iniciar un torneo");
@@ -39,16 +38,7 @@ public class OpTorneo {
 
 			} while (op > i);
 			Tournament t = RaceControlApp.almacen.getActualTournaments().get(op - 1);
-
-			if (!t.getGarages().isEmpty()) {
-				startRace(t);
-				flag = true;
-				return;
-
-			} else {
-				System.out.println("El torneo no empezará hasta que se inscriban los garages");
-				flag = true;
-			}
+			startRace(t);
 
 		}
 	}
@@ -59,12 +49,20 @@ public class OpTorneo {
 	 * @param t El torneo donde se celebrará la carrera
 	 */
 	public static void startRace(Tournament t) {
-		Race race = t.getRaces().poll();
-		if (race == null) {
-			System.out.println("No quedan carreras en este torneo, debería haber terminado");
+		boolean flag = false;
+		Thread h1 = new Thread();
+		if (!t.getGarages().isEmpty()) {
+			Race race = t.getRaces().poll();
+			if (race == null) {
+				System.out.println("No quedan carreras en este torneo");
+			} else {
+				race.insertCars();
+				h1 = new Thread(race);
+				h1.start();
+			}
 		} else {
-			Thread h1 = new Thread(race);
-			h1.start();
+			System.out.println("El torneo no empezará hasta que se inscriban los garages");
+			flag = true;
 		}
 	}
 

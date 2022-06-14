@@ -2,6 +2,8 @@ package pojos;
 
 import java.util.Collections;
 
+import operaciones.CarDisponibility;
+
 public class EliminationRace extends Race  {
 
 
@@ -28,10 +30,16 @@ public class EliminationRace extends Race  {
 	 * 
 	 */
 	public void run() {
+	
+	
+		CarDisponibility.carDisponibility.checkDisponibility(cars,raceName);
+		CarDisponibility.carDisponibility.blockCars(cars);
+			
+		
 		System.err.println("***********************************************");
 		System.err.println("COMIENZA LA CARRERA "+ getRaceName().toUpperCase());
 		
-		insertCars();
+		
 		startCars();
 		for (int i = 0; i < WARM_UP_MINUTS; i++) {
 			System.err.println("***********************************************");
@@ -75,7 +83,7 @@ public class EliminationRace extends Race  {
 		cars.get(0).brakeStop();
 		
 		actualizeScore();
-		
+		CarDisponibility.carDisponibility.liberateCars(cars);
 		
 	}
 }

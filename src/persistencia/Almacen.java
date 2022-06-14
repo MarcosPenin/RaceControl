@@ -3,6 +3,7 @@ package persistencia;
 import java.util.ArrayList;
 import java.util.List;
 
+import pojos.Car;
 import pojos.Garage;
 import pojos.Tournament;
 
@@ -14,13 +15,13 @@ import pojos.Tournament;
  */
 
 
-
 public class Almacen {
 
 	
 	private ArrayList<Tournament> tournaments = new ArrayList<>();
 	private ArrayList<Tournament> actualTournaments = new ArrayList<>();
 	private ArrayList<Garage> garages = new ArrayList<>();
+	private ArrayList<Car> allCars = new ArrayList<>();
 
 
 
@@ -52,11 +53,25 @@ public class Almacen {
 		garages.add(garage);
 	}
 
+
+
 	public  void addTournament(Tournament tournament) {
 		tournaments.add(tournament);
 		actualTournaments.add(tournament);
 	}
 
+	public ArrayList<Car> getAllCars() {
+		return allCars;
+	}
+
+	public void setAllCars(ArrayList<Car> allCars) {
+		this.allCars = allCars;
+	}
+
+	public  void addCar(Car car) {
+		allCars.add(car);
+	}
+	
 	
 
 }

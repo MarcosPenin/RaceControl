@@ -1,17 +1,8 @@
 package main;
 
-import java.awt.BorderLayout;
-import java.io.PrintStream;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
-import persistencia.*;
-
+import persistencia.Almacen;
+import persistencia.MyJsonReader;
 import vista.MenuRaceControl;
-import vista.TextAreaOutputStream;
 import vista.UIRaces;
 
 /**
@@ -26,14 +17,13 @@ public class RaceControlApp {
 	public static Almacen almacen = new Almacen();
 
 	public static void main(String[] args) {
-	
+
 		UIRaces.run();
-			
 		MyJsonReader.readAlmacenJson();
 		MenuRaceControl.menuPrincipal();
 		//MyJsonWriter.writeAlmacenToJson();
-		
+
 		System.exit(0);
-		
-		
-	}}
+
+	}
+}

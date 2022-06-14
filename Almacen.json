@@ -3,68 +3,14 @@
     {
       "name": "Mundial de Formula 1",
       "drivenRaces": 0,
-      "numRaces": 8,
+      "numRaces": 7,
       "onlyOneGarage": false,
       "races": [
         {
           "type": "pojos.StandarRace",
           "data": {
             "horas": 3,
-            "raceName": "GP de Canada",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.StandarRace",
-          "data": {
-            "horas": 4,
-            "raceName": "GP de España",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.EliminationRace",
-          "data": {
-            "WARM_UP_MINUTS": 5,
-            "raceName": "GP de Monaco",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.StandarRace",
-          "data": {
-            "horas": 3,
-            "raceName": "GP de Italia",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.EliminationRace",
-          "data": {
-            "WARM_UP_MINUTS": 5,
-            "raceName": "GP de Abu Dabi",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.StandarRace",
-          "data": {
-            "horas": 5,
-            "raceName": "GP de Austria",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.EliminationRace",
-          "data": {
-            "WARM_UP_MINUTS": 5,
-            "raceName": "GP de Japon",
+            "raceName": "GP DE CANADA",
             "cars": [],
             "podium": {}
           }
@@ -73,7 +19,52 @@
           "type": "pojos.StandarRace",
           "data": {
             "horas": 2,
-            "raceName": "GP de Australia",
+            "raceName": "GP DE ITALIA",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP DE MONACO",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 4,
+            "raceName": "GP DE HOLANDA",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP DE ABU DABI",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 5,
+            "raceName": "GP DE JAPON",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP DE AUSTRALIA",
             "cars": [],
             "podium": {}
           }
@@ -96,7 +87,8 @@
               "steeringWheelAngle": 0,
               "garage": "Mercedes",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "George Russell",
@@ -111,112 +103,8 @@
               "steeringWheelAngle": 0,
               "garage": "Mercedes",
               "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "Red Bull",
-          "cars": [
-            {
-              "piloto": "Max Verstappen",
-              "brand": "Red Bull",
-              "model": "Rb1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Red Bull",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Sergio Perez",
-              "brand": "Red Bull",
-              "model": "RB2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Red Bull",
-              "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "Ferrari",
-          "cars": [
-            {
-              "piloto": "Charles Leclerc",
-              "brand": "Ferrari",
-              "model": "F1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Ferrari",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Carlos Sainz",
-              "brand": "Ferrari",
-              "model": "F2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Ferrari",
-              "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "McLaren",
-          "cars": [
-            {
-              "piloto": "Daniel Ricciardo",
-              "brand": "McLaren",
-              "model": "MC1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "McLaren",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Lando Norris",
-              "brand": "McLaren",
-              "model": "MC2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "McLaren",
-              "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             }
           ]
         },
@@ -236,7 +124,8 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "Esteban Ocon",
@@ -251,10 +140,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Mick Schumacher",
+              "piloto": "Kevin Magnussen",
               "brand": "Haas",
               "model": "H1",
               "MAX_SPEED": 120,
@@ -266,10 +156,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Kevin Magnussen",
+              "piloto": "Mick Schumacher",
               "brand": "Haas",
               "model": "H2",
               "MAX_SPEED": 120,
@@ -281,7 +172,119 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
+            }
+          ]
+        },
+        {
+          "name": "McLaren",
+          "cars": [
+            {
+              "piloto": "Lando Norris",
+              "brand": "McLaren",
+              "model": "MC1",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "McLaren",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            },
+            {
+              "piloto": "Daniel Ricciardo",
+              "brand": "McLaren",
+              "model": "MC2",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "McLaren",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            }
+          ]
+        },
+        {
+          "name": "Alfa Romeo",
+          "cars": [
+            {
+              "piloto": "Guanyu Zhou",
+              "brand": "Alfa Romeo",
+              "model": "AR1",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Alfa Romeo",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            },
+            {
+              "piloto": "Valtteri Bottas",
+              "brand": "Alfa Romeo",
+              "model": "AR2",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Alfa Romeo",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            }
+          ]
+        },
+        {
+          "name": "Red Bull",
+          "cars": [
+            {
+              "piloto": "Sergio Perez",
+              "brand": "Red Bull",
+              "model": "RB1",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Red Bull",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            },
+            {
+              "piloto": "Max Verstappen",
+              "brand": "Red Bull",
+              "model": "RB2",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Red Bull",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
             }
           ]
         },
@@ -301,7 +304,8 @@
               "steeringWheelAngle": 0,
               "garage": "Aston Martin",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "Lance Stroll",
@@ -316,49 +320,13 @@
               "steeringWheelAngle": 0,
               "garage": "Aston Martin",
               "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "Alfa Romeo",
-          "cars": [
-            {
-              "piloto": "Valtteri Bottas",
-              "brand": "AR1",
-              "model": "AR1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Alfa Romeo",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Guanyu Zhou",
-              "brand": "Aston Martin",
-              "model": "AM2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Alfa Romeo",
-              "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             }
           ]
         }
       ],
       "scoreTable": {
-        "Charles Leclerc": 0,
-        "Carlos Sainz": 0,
         "Sebastian Vettel": 0,
         "Lance Stroll": 0,
         "Lando Norris": 0,
@@ -427,7 +395,8 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "Esteban Ocon",
@@ -442,10 +411,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Mick Schumacher",
+              "piloto": "Kevin Magnussen",
               "brand": "Haas",
               "model": "H1",
               "MAX_SPEED": 120,
@@ -457,10 +427,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Kevin Magnussen",
+              "piloto": "Mick Schumacher",
               "brand": "Haas",
               "model": "H2",
               "MAX_SPEED": 120,
@@ -472,7 +443,8 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             }
           ]
         }
@@ -490,68 +462,14 @@
     {
       "name": "Mundial de Formula 1",
       "drivenRaces": 0,
-      "numRaces": 8,
+      "numRaces": 7,
       "onlyOneGarage": false,
       "races": [
         {
           "type": "pojos.StandarRace",
           "data": {
             "horas": 3,
-            "raceName": "GP de Canada",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.StandarRace",
-          "data": {
-            "horas": 4,
-            "raceName": "GP de España",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.EliminationRace",
-          "data": {
-            "WARM_UP_MINUTS": 5,
-            "raceName": "GP de Monaco",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.StandarRace",
-          "data": {
-            "horas": 3,
-            "raceName": "GP de Italia",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.EliminationRace",
-          "data": {
-            "WARM_UP_MINUTS": 5,
-            "raceName": "GP de Abu Dabi",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.StandarRace",
-          "data": {
-            "horas": 5,
-            "raceName": "GP de Austria",
-            "cars": [],
-            "podium": {}
-          }
-        },
-        {
-          "type": "pojos.EliminationRace",
-          "data": {
-            "WARM_UP_MINUTS": 5,
-            "raceName": "GP de Japon",
+            "raceName": "GP DE CANADA",
             "cars": [],
             "podium": {}
           }
@@ -560,7 +478,52 @@
           "type": "pojos.StandarRace",
           "data": {
             "horas": 2,
-            "raceName": "GP de Australia",
+            "raceName": "GP DE ITALIA",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP DE MONACO",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 4,
+            "raceName": "GP DE HOLANDA",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP DE ABU DABI",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.StandarRace",
+          "data": {
+            "horas": 5,
+            "raceName": "GP DE JAPON",
+            "cars": [],
+            "podium": {}
+          }
+        },
+        {
+          "type": "pojos.EliminationRace",
+          "data": {
+            "WARM_UP_MINUTS": 5,
+            "raceName": "GP DE AUSTRALIA",
             "cars": [],
             "podium": {}
           }
@@ -583,7 +546,8 @@
               "steeringWheelAngle": 0,
               "garage": "Mercedes",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "George Russell",
@@ -598,112 +562,8 @@
               "steeringWheelAngle": 0,
               "garage": "Mercedes",
               "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "Red Bull",
-          "cars": [
-            {
-              "piloto": "Max Verstappen",
-              "brand": "Red Bull",
-              "model": "Rb1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Red Bull",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Sergio Perez",
-              "brand": "Red Bull",
-              "model": "RB2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Red Bull",
-              "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "Ferrari",
-          "cars": [
-            {
-              "piloto": "Charles Leclerc",
-              "brand": "Ferrari",
-              "model": "F1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Ferrari",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Carlos Sainz",
-              "brand": "Ferrari",
-              "model": "F2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Ferrari",
-              "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "McLaren",
-          "cars": [
-            {
-              "piloto": "Daniel Ricciardo",
-              "brand": "McLaren",
-              "model": "MC1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "McLaren",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Lando Norris",
-              "brand": "McLaren",
-              "model": "MC2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "McLaren",
-              "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             }
           ]
         },
@@ -723,7 +583,8 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "Esteban Ocon",
@@ -738,10 +599,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Mick Schumacher",
+              "piloto": "Kevin Magnussen",
               "brand": "Haas",
               "model": "H1",
               "MAX_SPEED": 120,
@@ -753,10 +615,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Kevin Magnussen",
+              "piloto": "Mick Schumacher",
               "brand": "Haas",
               "model": "H2",
               "MAX_SPEED": 120,
@@ -768,7 +631,119 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
+            }
+          ]
+        },
+        {
+          "name": "McLaren",
+          "cars": [
+            {
+              "piloto": "Lando Norris",
+              "brand": "McLaren",
+              "model": "MC1",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "McLaren",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            },
+            {
+              "piloto": "Daniel Ricciardo",
+              "brand": "McLaren",
+              "model": "MC2",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "McLaren",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            }
+          ]
+        },
+        {
+          "name": "Alfa Romeo",
+          "cars": [
+            {
+              "piloto": "Guanyu Zhou",
+              "brand": "Alfa Romeo",
+              "model": "AR1",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Alfa Romeo",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            },
+            {
+              "piloto": "Valtteri Bottas",
+              "brand": "Alfa Romeo",
+              "model": "AR2",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Alfa Romeo",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            }
+          ]
+        },
+        {
+          "name": "Red Bull",
+          "cars": [
+            {
+              "piloto": "Sergio Perez",
+              "brand": "Red Bull",
+              "model": "RB1",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Red Bull",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
+            },
+            {
+              "piloto": "Max Verstappen",
+              "brand": "Red Bull",
+              "model": "RB2",
+              "MAX_SPEED": 120,
+              "MAX_SPEED_REVERSE": 20,
+              "fuel": "Gasolina",
+              "speedometer": 0,
+              "tachometer": 0,
+              "gear": "N",
+              "steeringWheelAngle": 0,
+              "garage": "Red Bull",
+              "totalDistance": 0,
+              "distance": 0,
+              "running": false
             }
           ]
         },
@@ -788,7 +763,8 @@
               "steeringWheelAngle": 0,
               "garage": "Aston Martin",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "Lance Stroll",
@@ -803,49 +779,13 @@
               "steeringWheelAngle": 0,
               "garage": "Aston Martin",
               "totalDistance": 0,
-              "distance": 0
-            }
-          ]
-        },
-        {
-          "name": "Alfa Romeo",
-          "cars": [
-            {
-              "piloto": "Valtteri Bottas",
-              "brand": "AR1",
-              "model": "AR1",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Alfa Romeo",
-              "totalDistance": 0,
-              "distance": 0
-            },
-            {
-              "piloto": "Guanyu Zhou",
-              "brand": "Aston Martin",
-              "model": "AM2",
-              "MAX_SPEED": 120,
-              "MAX_SPEED_REVERSE": 20,
-              "fuel": "Gasolina",
-              "speedometer": 0,
-              "tachometer": 0,
-              "gear": "N",
-              "steeringWheelAngle": 0,
-              "garage": "Alfa Romeo",
-              "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             }
           ]
         }
       ],
       "scoreTable": {
-        "Charles Leclerc": 0,
-        "Carlos Sainz": 0,
         "Sebastian Vettel": 0,
         "Lance Stroll": 0,
         "Lando Norris": 0,
@@ -914,7 +854,8 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
               "piloto": "Esteban Ocon",
@@ -929,10 +870,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Mick Schumacher",
+              "piloto": "Kevin Magnussen",
               "brand": "Haas",
               "model": "H1",
               "MAX_SPEED": 120,
@@ -944,10 +886,11 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             },
             {
-              "piloto": "Kevin Magnussen",
+              "piloto": "Mick Schumacher",
               "brand": "Haas",
               "model": "H2",
               "MAX_SPEED": 120,
@@ -959,7 +902,8 @@
               "steeringWheelAngle": 0,
               "garage": "Alpine-Haas",
               "totalDistance": 0,
-              "distance": 0
+              "distance": 0,
+              "running": false
             }
           ]
         }
@@ -990,7 +934,8 @@
           "steeringWheelAngle": 0,
           "garage": "Mercedes",
           "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
         },
         {
           "piloto": "George Russell",
@@ -1005,112 +950,8 @@
           "steeringWheelAngle": 0,
           "garage": "Mercedes",
           "totalDistance": 0,
-          "distance": 0
-        }
-      ]
-    },
-    {
-      "name": "Red Bull",
-      "cars": [
-        {
-          "piloto": "Max Verstappen",
-          "brand": "Red Bull",
-          "model": "Rb1",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "Red Bull",
-          "totalDistance": 0,
-          "distance": 0
-        },
-        {
-          "piloto": "Sergio Perez",
-          "brand": "Red Bull",
-          "model": "RB2",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "Red Bull",
-          "totalDistance": 0,
-          "distance": 0
-        }
-      ]
-    },
-    {
-      "name": "Ferrari",
-      "cars": [
-        {
-          "piloto": "Charles Leclerc",
-          "brand": "Ferrari",
-          "model": "F1",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "Ferrari",
-          "totalDistance": 0,
-          "distance": 0
-        },
-        {
-          "piloto": "Carlos Sainz",
-          "brand": "Ferrari",
-          "model": "F2",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "Ferrari",
-          "totalDistance": 0,
-          "distance": 0
-        }
-      ]
-    },
-    {
-      "name": "McLaren",
-      "cars": [
-        {
-          "piloto": "Daniel Ricciardo",
-          "brand": "McLaren",
-          "model": "MC1",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "McLaren",
-          "totalDistance": 0,
-          "distance": 0
-        },
-        {
-          "piloto": "Lando Norris",
-          "brand": "McLaren",
-          "model": "MC2",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "McLaren",
-          "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
         }
       ]
     },
@@ -1130,7 +971,8 @@
           "steeringWheelAngle": 0,
           "garage": "Alpine-Haas",
           "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
         },
         {
           "piloto": "Esteban Ocon",
@@ -1145,10 +987,11 @@
           "steeringWheelAngle": 0,
           "garage": "Alpine-Haas",
           "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
         },
         {
-          "piloto": "Mick Schumacher",
+          "piloto": "Kevin Magnussen",
           "brand": "Haas",
           "model": "H1",
           "MAX_SPEED": 120,
@@ -1160,10 +1003,11 @@
           "steeringWheelAngle": 0,
           "garage": "Alpine-Haas",
           "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
         },
         {
-          "piloto": "Kevin Magnussen",
+          "piloto": "Mick Schumacher",
           "brand": "Haas",
           "model": "H2",
           "MAX_SPEED": 120,
@@ -1175,7 +1019,119 @@
           "steeringWheelAngle": 0,
           "garage": "Alpine-Haas",
           "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
+        }
+      ]
+    },
+    {
+      "name": "McLaren",
+      "cars": [
+        {
+          "piloto": "Lando Norris",
+          "brand": "McLaren",
+          "model": "MC1",
+          "MAX_SPEED": 120,
+          "MAX_SPEED_REVERSE": 20,
+          "fuel": "Gasolina",
+          "speedometer": 0,
+          "tachometer": 0,
+          "gear": "N",
+          "steeringWheelAngle": 0,
+          "garage": "McLaren",
+          "totalDistance": 0,
+          "distance": 0,
+          "running": false
+        },
+        {
+          "piloto": "Daniel Ricciardo",
+          "brand": "McLaren",
+          "model": "MC2",
+          "MAX_SPEED": 120,
+          "MAX_SPEED_REVERSE": 20,
+          "fuel": "Gasolina",
+          "speedometer": 0,
+          "tachometer": 0,
+          "gear": "N",
+          "steeringWheelAngle": 0,
+          "garage": "McLaren",
+          "totalDistance": 0,
+          "distance": 0,
+          "running": false
+        }
+      ]
+    },
+    {
+      "name": "Alfa Romeo",
+      "cars": [
+        {
+          "piloto": "Guanyu Zhou",
+          "brand": "Alfa Romeo",
+          "model": "AR1",
+          "MAX_SPEED": 120,
+          "MAX_SPEED_REVERSE": 20,
+          "fuel": "Gasolina",
+          "speedometer": 0,
+          "tachometer": 0,
+          "gear": "N",
+          "steeringWheelAngle": 0,
+          "garage": "Alfa Romeo",
+          "totalDistance": 0,
+          "distance": 0,
+          "running": false
+        },
+        {
+          "piloto": "Valtteri Bottas",
+          "brand": "Alfa Romeo",
+          "model": "AR2",
+          "MAX_SPEED": 120,
+          "MAX_SPEED_REVERSE": 20,
+          "fuel": "Gasolina",
+          "speedometer": 0,
+          "tachometer": 0,
+          "gear": "N",
+          "steeringWheelAngle": 0,
+          "garage": "Alfa Romeo",
+          "totalDistance": 0,
+          "distance": 0,
+          "running": false
+        }
+      ]
+    },
+    {
+      "name": "Red Bull",
+      "cars": [
+        {
+          "piloto": "Sergio Perez",
+          "brand": "Red Bull",
+          "model": "RB1",
+          "MAX_SPEED": 120,
+          "MAX_SPEED_REVERSE": 20,
+          "fuel": "Gasolina",
+          "speedometer": 0,
+          "tachometer": 0,
+          "gear": "N",
+          "steeringWheelAngle": 0,
+          "garage": "Red Bull",
+          "totalDistance": 0,
+          "distance": 0,
+          "running": false
+        },
+        {
+          "piloto": "Max Verstappen",
+          "brand": "Red Bull",
+          "model": "RB2",
+          "MAX_SPEED": 120,
+          "MAX_SPEED_REVERSE": 20,
+          "fuel": "Gasolina",
+          "speedometer": 0,
+          "tachometer": 0,
+          "gear": "N",
+          "steeringWheelAngle": 0,
+          "garage": "Red Bull",
+          "totalDistance": 0,
+          "distance": 0,
+          "running": false
         }
       ]
     },
@@ -1195,7 +1151,8 @@
           "steeringWheelAngle": 0,
           "garage": "Aston Martin",
           "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
         },
         {
           "piloto": "Lance Stroll",
@@ -1210,44 +1167,236 @@
           "steeringWheelAngle": 0,
           "garage": "Aston Martin",
           "totalDistance": 0,
-          "distance": 0
+          "distance": 0,
+          "running": false
         }
       ]
+    }
+  ],
+  "allCars": [
+    {
+      "piloto": "Lewis Hamilton",
+      "brand": "Mercedes",
+      "model": "M1",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Mercedes",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
     },
     {
-      "name": "Alfa Romeo",
-      "cars": [
-        {
-          "piloto": "Valtteri Bottas",
-          "brand": "AR1",
-          "model": "AR1",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "Alfa Romeo",
-          "totalDistance": 0,
-          "distance": 0
-        },
-        {
-          "piloto": "Guanyu Zhou",
-          "brand": "Aston Martin",
-          "model": "AM2",
-          "MAX_SPEED": 120,
-          "MAX_SPEED_REVERSE": 20,
-          "fuel": "Gasolina",
-          "speedometer": 0,
-          "tachometer": 0,
-          "gear": "N",
-          "steeringWheelAngle": 0,
-          "garage": "Alfa Romeo",
-          "totalDistance": 0,
-          "distance": 0
-        }
-      ]
+      "piloto": "George Russell",
+      "brand": "Mercedes",
+      "model": "M2",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Mercedes",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Fernando Alonso",
+      "brand": "Alpine",
+      "model": "A1",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Alpine-Haas",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Esteban Ocon",
+      "brand": "Alpine",
+      "model": "A2",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Alpine-Haas",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Kevin Magnussen",
+      "brand": "Haas",
+      "model": "H1",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Alpine-Haas",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Mick Schumacher",
+      "brand": "Haas",
+      "model": "H2",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Alpine-Haas",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Lando Norris",
+      "brand": "McLaren",
+      "model": "MC1",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "McLaren",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Daniel Ricciardo",
+      "brand": "McLaren",
+      "model": "MC2",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "McLaren",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Guanyu Zhou",
+      "brand": "Alfa Romeo",
+      "model": "AR1",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Alfa Romeo",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Valtteri Bottas",
+      "brand": "Alfa Romeo",
+      "model": "AR2",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Alfa Romeo",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Sergio Perez",
+      "brand": "Red Bull",
+      "model": "RB1",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Red Bull",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Max Verstappen",
+      "brand": "Red Bull",
+      "model": "RB2",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Red Bull",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Sebastian Vettel",
+      "brand": "Aston Martin",
+      "model": "AM1",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Aston Martin",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
+    },
+    {
+      "piloto": "Lance Stroll",
+      "brand": "Aston Martin",
+      "model": "AM2",
+      "MAX_SPEED": 120,
+      "MAX_SPEED_REVERSE": 20,
+      "fuel": "Gasolina",
+      "speedometer": 0,
+      "tachometer": 0,
+      "gear": "N",
+      "steeringWheelAngle": 0,
+      "garage": "Aston Martin",
+      "totalDistance": 0,
+      "distance": 0,
+      "running": false
     }
   ]
 }

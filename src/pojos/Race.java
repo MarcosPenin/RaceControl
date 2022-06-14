@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import main.RaceControlApp;
+import operaciones.CarDisponibility;
+
 public abstract class Race implements Runnable {
 
 	protected String raceName;
@@ -21,8 +24,8 @@ public abstract class Race implements Runnable {
 	 * Simula la celebración de una carrera. Desarrollado en las subclases
 	 * 
 	 */
-	public abstract void run();
-
+	
+	
 	public void driveAll() {
 		for (Car car : cars) {
 			car.drive();
@@ -33,7 +36,7 @@ public abstract class Race implements Runnable {
 
 	public void actualizeScore() {
 		System.err.println("***********************************************");
-		System.err.println("CARRERA "+getRaceName()+ " TERMINADA. PODIUM: ");
+		System.err.println("CARRERA " + getRaceName() + " TERMINADA. PODIUM: ");
 		getPodium().forEach((i, j) -> System.err.println("Coche: " + i + ": Posición: " + j));
 
 		tournament.actualiceScoreTable(this);
@@ -54,24 +57,23 @@ public abstract class Race implements Runnable {
 	 */
 	public void insertCars() {
 
-		Car newCar;
-
 		if (this.tournament.onlyOneGarage) {
 			for (Car car : tournament.getGarages().get(0).getCars()) {
-				newCar = car.clone();
-				cars.add(newCar);
+				cars.add(car);
+
 			}
 		} else {
 			Random random = new Random();
 			for (Garage garage : tournament.getGarages()) {
 				int max = garage.getCars().size();
 				int position = random.nextInt(max);
-				newCar = garage.getCars().get(position).clone();
-				cars.add(newCar);
+				cars.add(garage.getCars().get(position));
 
 			}
 		}
 	}
+
+
 
 	/**
 	 * Enciende todos los coches que participan en la carrera

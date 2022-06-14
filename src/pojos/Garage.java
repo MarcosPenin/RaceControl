@@ -2,6 +2,8 @@ package pojos;
 
 import java.util.ArrayList;
 
+import main.RaceControlApp;
+
 public class Garage {
 
 	private String name;
@@ -14,6 +16,7 @@ public class Garage {
 		for (Car car : cars) {
 			this.cars.add(car);
 			car.setGarage(name);
+			RaceControlApp.almacen.addCar(car);
 		}
 	}
 
